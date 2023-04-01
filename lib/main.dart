@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:tails_app/auth/auth.dart';
 import 'package:tails_app/home.dart';
+import 'package:tails_app/stories.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (context) => const HomePage(),
         '/auth': (context) => const AuthPage(),
+        '/stories': (context) => const StoriesPage(),
       },
       home: AnimatedSplashScreen(
         duration: 3000,

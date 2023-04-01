@@ -140,6 +140,7 @@ class _AuthPageState extends State<AuthPage> {
                   ),
                   onPressed: () {
                     //isSign ? signUp() : signIn();
+                    Navigator.pushNamed(context, '/stories');
                   },
                   child: isSign
                       ? const Text(
