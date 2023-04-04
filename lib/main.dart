@@ -7,7 +7,9 @@ import 'package:tails_app/auth/auth.dart';
 import 'package:tails_app/auth/service.dart';
 import 'package:tails_app/data.dart';
 import 'package:tails_app/home.dart';
+import 'package:tails_app/info_about_project.dart';
 import 'package:tails_app/landing.dart';
+import 'package:tails_app/pick_up_the_pet.dart';
 import 'package:tails_app/stories.dart';
 
 void main() async {
@@ -32,6 +34,8 @@ class MyApp extends StatelessWidget {
           '/auth': (context) => const LandingPage(),
           '/data': (context) => DataPage(),
           '/stories': (context) => const StoriesPage(),
+          '/pickPet':(context) => const PickUpPage(),
+          '/projectInfo':(context) => const AboutProjectPage()
         },
         home: AnimatedSplashScreen(
           duration: 3000,
