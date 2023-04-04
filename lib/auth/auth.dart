@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_app/auth/model.dart';
-// import 'package:flutter_app/auth/service.dart';
+import 'package:tails_app/auth/model.dart';
+import 'package:tails_app/auth/service.dart';
+// import 'package:tails_app/auth/model.dart';
+// import 'package:tails_app/auth/service.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
@@ -11,20 +13,22 @@ class AuthPage extends StatefulWidget {
 
 class _AuthPageState extends State<AuthPage> {
   bool isSign = false;
-  TextEditingController loginController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   String title = 'АВТОРИЗАЦИЯ';
-  // AuthServices authServices = AuthServices();
+  AuthServices authServices = AuthServices();
 
-  // signIn() async {
-  //   UserModel? user = await authServices.signIn(
-  //       emailController.text, passwordController.text);
-  // }
+  signIn() async {
+    UserModel? user = await authServices.signIn(
+        emailController.text, passwordController.text);
+    return user;
+  }
 
-  // signUp() async {
-  //   UserModel? user = await authServices.signUp(
-  //       emailController.text, passwordController.text);
-  // }
+  signUp() async {
+    UserModel? user = await authServices.signUp(
+        emailController.text, passwordController.text);
+    return user;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +58,7 @@ class _AuthPageState extends State<AuthPage> {
                   style: const TextStyle(
                     color: Color.fromARGB(200, 229, 242, 255),
                   ),
-                  controller: loginController,
+                  controller: emailController,
                   cursorColor: const Color.fromARGB(159, 188, 217, 255),
                   decoration: InputDecoration(
                     label: const Text(
@@ -64,15 +68,17 @@ class _AuthPageState extends State<AuthPage> {
                       color: Color.fromARGB(159, 188, 217, 255),
                     ),
                     focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: const BorderSide(
-                          color: Color.fromARGB(159, 188, 217, 255),
-                        )),
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: const BorderSide(
+                        color: Color.fromARGB(159, 188, 217, 255),
+                      ),
+                    ),
                     enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: const BorderSide(
-                          color: Color.fromARGB(159, 188, 217, 255),
-                        )),
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: const BorderSide(
+                        color: Color.fromARGB(159, 188, 217, 255),
+                      ),
+                    ),
                     prefixIcon: const Icon(
                       Icons.lock_person,
                       color: Color.fromARGB(159, 188, 217, 255),
@@ -100,15 +106,17 @@ class _AuthPageState extends State<AuthPage> {
                       color: Color.fromARGB(159, 188, 217, 255),
                     ),
                     focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: const BorderSide(
-                          color: Color.fromARGB(159, 188, 217, 255),
-                        )),
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: const BorderSide(
+                        color: Color.fromARGB(159, 188, 217, 255),
+                      ),
+                    ),
                     enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: const BorderSide(
-                          color: Color.fromARGB(159, 188, 217, 255),
-                        )),
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: const BorderSide(
+                        color: Color.fromARGB(159, 188, 217, 255),
+                      ),
+                    ),
                     prefixIcon: const Icon(
                       Icons.lock_person,
                       color: Color.fromARGB(159, 188, 217, 255),
@@ -139,8 +147,9 @@ class _AuthPageState extends State<AuthPage> {
                     ),
                   ),
                   onPressed: () {
-                    //isSign ? signUp() : signIn();
-                    Navigator.pushNamed(context, '/stories');
+                    isSign ? signUp() : signIn();
+                    //Navigator.pushNamed(context, '/stories');
+                    //Navigator.pushNamed(context, '/data');
                   },
                   child: isSign
                       ? const Text(
@@ -162,14 +171,16 @@ class _AuthPageState extends State<AuthPage> {
               ),
               InkWell(
                 onTap: () {
-                  setState(() {
-                    isSign = !isSign;
-                    if (isSign) {
-                      title = 'РЕГИСТРАЦИЯ';
-                    } else {
-                      title = 'АВТОРИЗАЦИЯ';
-                    }
-                  });
+                  setState(
+                    () {
+                      isSign = !isSign;
+                      if (isSign) {
+                        title = 'РЕГИСТРАЦИЯ';
+                      } else {
+                        title = 'АВТОРИЗАЦИЯ';
+                      }
+                    },
+                  );
                 },
                 child: isSign
                     ? const Text(
