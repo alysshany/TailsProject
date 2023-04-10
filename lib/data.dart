@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -73,30 +75,162 @@ class _DataPageState extends State<DataPage> {
         centerTitle: true,
         //automaticallyImplyLeading: false,
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      extendBody: true,
+      bottomNavigationBar: FloatingNavbar(
         backgroundColor: const Color.fromARGB(200, 229, 242, 255),
-        selectedItemColor: const Color.fromARGB(101, 133, 166, 255),
-        unselectedItemColor: const Color.fromARGB(101, 133, 166, 255),
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: 'Добавить',
+        onTap: (int val) {},
+        currentIndex: -1,
+        items: [
+          FloatingNavbarItem(
+            customWidget: SizedBox(
+              width: MediaQuery.of(context).size.width * 0.20,
+              height: MediaQuery.of(context).size.width * 0.18,
+              child: Card(
+                color: const Color.fromARGB(200, 229, 242, 255),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: IconButton(
+                  icon: const Icon(Icons.add),
+                  color: const Color.fromARGB(101, 133, 166, 255),
+                  onPressed: () async {
+                    pets.name = nameController.text;
+                    pets.kind = kindController.text;
+                    pets.gender = genderController.text;
+                    pets.age = ageController.text;
+                    pets.description = descriptionController.text;
+                    pets.image = imageController.text;
+                    CollectionReference petsRef =
+                        FirebaseFirestore.instance.collection('pets');
+                    await petsRef.add(
+                      {
+                        'name': pets.name,
+                        'kind': pets.kind,
+                        'gender': pets.gender,
+                        'age': pets.age,
+                        'description': pets.description,
+                        'image': pets.image,
+                      },
+                    );
+                    nameController.clear();
+                    kindController.clear();
+                    genderController.clear();
+                    ageController.clear();
+                    descriptionController.clear();
+                    imageController.clear();
+                    Navigator.pop(context);
+                  },
+                ),
+              ),
+            ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.update),
-            label: 'Обновить',
+          FloatingNavbarItem(
+            customWidget: SizedBox(
+              width: MediaQuery.of(context).size.width * 0.20,
+              height: MediaQuery.of(context).size.width * 0.18,
+              child: Card(
+                color: const Color.fromARGB(200, 229, 242, 255),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: IconButton(
+                  icon: const Icon(Icons.update),
+                  color: const Color.fromARGB(101, 133, 166, 255),
+                  onPressed: () async {
+                    CollectionReference petsRef =
+                        FirebaseFirestore.instance.collection('pets');
+                    await petsRef.doc(widget.docFireBase.id).update(
+                      {
+                        'name': pets.name,
+                        'kind': pets.kind,
+                        'gender': pets.gender,
+                        'age': pets.age,
+                        'description': pets.description,
+                        'image': pets.image,
+                      },
+                    );
+                    nameController.clear();
+                    kindController.clear();
+                    genderController.clear();
+                    ageController.clear();
+                    descriptionController.clear();
+                    imageController.clear();
+                    Navigator.pop(context);
+                  },
+                ),
+              ),
+            ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.delete),
-            label: 'Удалить',
+          FloatingNavbarItem(
+            customWidget: SizedBox(
+              width: MediaQuery.of(context).size.width * 0.20,
+              height: MediaQuery.of(context).size.width * 0.18,
+              child: Card(
+                color: const Color.fromARGB(200, 229, 242, 255),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: IconButton(
+                  icon: const Icon(Icons.delete),
+                  color: const Color.fromARGB(101, 133, 166, 255),
+                  onPressed: () async {
+                    CollectionReference petsRef =
+                        FirebaseFirestore.instance.collection('pets');
+                    await petsRef.doc(widget.docFireBase.id).update(
+                      {
+                        'name': pets.name,
+                        'kind': pets.kind,
+                        'gender': pets.gender,
+                        'age': pets.age,
+                        'description': pets.description,
+                        'image': pets.image,
+                      },
+                    );
+                    nameController.clear();
+                    kindController.clear();
+                    genderController.clear();
+                    ageController.clear();
+                    descriptionController.clear();
+                    imageController.clear();
+                    Navigator.pop(context);
+                  },
+                ),
+              ),
+            ),
           ),
         ],
-        onTap: (value) {
-          setState(
-            () {},
-          );
-        },
       ),
+      // appBar: AppBar(
+      //   title: const Text("widget.title!"),
+      //   backgroundColor: const Color.fromARGB(101, 133, 166, 255),
+      //   foregroundColor: const Color.fromARGB(200, 229, 242, 255),
+      //   centerTitle: true,
+      //   //automaticallyImplyLeading: false,
+      // ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   backgroundColor: const Color.fromARGB(200, 229, 242, 255),
+      //   selectedItemColor: const Color.fromARGB(101, 133, 166, 255),
+      //   unselectedItemColor: const Color.fromARGB(101, 133, 166, 255),
+      //   items: const [
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.add),
+      //       label: 'Добавить',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.update),
+      //       label: 'Обновить',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.delete),
+      //       label: 'Удалить',
+      //     ),
+      //   ],
+      //   onTap: (value) {
+      //     setState(
+      //       () {},
+      //     );
+      //   },
+      // ),
       body: SingleChildScrollView(
         child: Center(
           child: SizedBox(
@@ -274,123 +408,123 @@ class _DataPageState extends State<DataPage> {
                     cursorColor: const Color.fromARGB(101, 133, 166, 255),
                   ),
                 ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.02,
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.08,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: const Color.fromARGB(101, 133, 166, 255),
-                      backgroundColor: const Color.fromARGB(200, 229, 242, 255),
-                    ),
-                    onPressed: () async {
-                      pets.name = nameController.text;
-                      pets.kind = kindController.text;
-                      pets.gender = genderController.text;
-                      pets.age = ageController.text;
-                      pets.description = descriptionController.text;
-                      pets.image = imageController.text;
-                      // CollectionReference petsRef =
-                      //     FirebaseFirestore.instance.collection('pets');
-                      // await petsRef.add(
-                      //   {
-                      //     'name': pets.name,
-                      //     'kind': pets.kind,
-                      //     'gender': pets.gender,
-                      //     'age': pets.age,
-                      //     'description': pets.description,
-                      //     'image': pets.image,
-                      //   },
-                      // );
-                      nameController.clear();
-                      kindController.clear();
-                      genderController.clear();
-                      ageController.clear();
-                      descriptionController.clear();
-                      imageController.clear();
-                      Navigator.pop(context);
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text("Добавить"),
-                        Icon(Icons.add),
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.01,
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.08,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: const Color.fromARGB(101, 133, 166, 255),
-                      backgroundColor: const Color.fromARGB(200, 229, 242, 255),
-                    ),
-                    onPressed: () async {
-                      // CollectionReference petsRef =
-                      //     FirebaseFirestore.instance.collection('pets');
-                      // await petsRef.doc(widget.docFireBase.id).update(
-                      //   {
-                      //     'name': pets.name,
-                      //     'kind': pets.kind,
-                      //     'gender': pets.gender,
-                      //     'age': pets.age,
-                      //     'description': pets.description,
-                      //     'image': pets.image,
-                      //   },
-                      // );
-                      nameController.clear();
-                      kindController.clear();
-                      genderController.clear();
-                      ageController.clear();
-                      descriptionController.clear();
-                      imageController.clear();
-                      Navigator.pop(context);
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text("Обновить"),
-                        Icon(Icons.update),
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.01,
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.08,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: const Color.fromARGB(101, 133, 166, 255),
-                      backgroundColor: const Color.fromARGB(200, 229, 242, 255),
-                    ),
-                    onPressed: () async {
-                      // CollectionReference petsRef =
-                      //     FirebaseFirestore.instance.collection('pets');
-                      // await petsRef.doc(widget.docFireBase.id).delete();
-                      nameController.clear();
-                      kindController.clear();
-                      genderController.clear();
-                      ageController.clear();
-                      descriptionController.clear();
-                      imageController.clear();
-                      Navigator.pop(context);
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text("Удалить"),
-                        Icon(Icons.delete),
-                      ],
-                    ),
-                  ),
-                ),
+                // SizedBox(
+                //   height: MediaQuery.of(context).size.height * 0.02,
+                // ),
+                // SizedBox(
+                //   height: MediaQuery.of(context).size.height * 0.08,
+                //   child: ElevatedButton(
+                //     style: ElevatedButton.styleFrom(
+                //       foregroundColor: const Color.fromARGB(101, 133, 166, 255),
+                //       backgroundColor: const Color.fromARGB(200, 229, 242, 255),
+                //     ),
+                //     onPressed: () async {
+                //       pets.name = nameController.text;
+                //       pets.kind = kindController.text;
+                //       pets.gender = genderController.text;
+                //       pets.age = ageController.text;
+                //       pets.description = descriptionController.text;
+                //       pets.image = imageController.text;
+                //       CollectionReference petsRef =
+                //           FirebaseFirestore.instance.collection('pets');
+                //       await petsRef.add(
+                //         {
+                //           'name': pets.name,
+                //           'kind': pets.kind,
+                //           'gender': pets.gender,
+                //           'age': pets.age,
+                //           'description': pets.description,
+                //           'image': pets.image,
+                //         },
+                //       );
+                //       nameController.clear();
+                //       kindController.clear();
+                //       genderController.clear();
+                //       ageController.clear();
+                //       descriptionController.clear();
+                //       imageController.clear();
+                //       Navigator.pop(context);
+                //     },
+                //     child: Row(
+                //       mainAxisAlignment: MainAxisAlignment.center,
+                //       children: const [
+                //         Text("Добавить"),
+                //         Icon(Icons.add),
+                //       ],
+                //     ),
+                //   ),
+                // ),
+                // SizedBox(
+                //   height: MediaQuery.of(context).size.height * 0.01,
+                // ),
+                // SizedBox(
+                //   height: MediaQuery.of(context).size.height * 0.08,
+                //   child: ElevatedButton(
+                //     style: ElevatedButton.styleFrom(
+                //       foregroundColor: const Color.fromARGB(101, 133, 166, 255),
+                //       backgroundColor: const Color.fromARGB(200, 229, 242, 255),
+                //     ),
+                //     onPressed: () async {
+                //       CollectionReference petsRef =
+                //           FirebaseFirestore.instance.collection('pets');
+                //       await petsRef.doc(widget.docFireBase.id).update(
+                //         {
+                //           'name': pets.name,
+                //           'kind': pets.kind,
+                //           'gender': pets.gender,
+                //           'age': pets.age,
+                //           'description': pets.description,
+                //           'image': pets.image,
+                //         },
+                //       );
+                //       nameController.clear();
+                //       kindController.clear();
+                //       genderController.clear();
+                //       ageController.clear();
+                //       descriptionController.clear();
+                //       imageController.clear();
+                //       Navigator.pop(context);
+                //     },
+                //     child: Row(
+                //       mainAxisAlignment: MainAxisAlignment.center,
+                //       children: const [
+                //         Text("Обновить"),
+                //         Icon(Icons.update),
+                //       ],
+                //     ),
+                //   ),
+                // ),
+                // SizedBox(
+                //   height: MediaQuery.of(context).size.height * 0.01,
+                // ),
+                // SizedBox(
+                //   height: MediaQuery.of(context).size.height * 0.08,
+                //   child: ElevatedButton(
+                //     style: ElevatedButton.styleFrom(
+                //       foregroundColor: const Color.fromARGB(101, 133, 166, 255),
+                //       backgroundColor: const Color.fromARGB(200, 229, 242, 255),
+                //     ),
+                //     onPressed: () async {
+                //       // CollectionReference petsRef =
+                //       //     FirebaseFirestore.instance.collection('pets');
+                //       // await petsRef.doc(widget.docFireBase.id).delete();
+                //       nameController.clear();
+                //       kindController.clear();
+                //       genderController.clear();
+                //       ageController.clear();
+                //       descriptionController.clear();
+                //       imageController.clear();
+                //       Navigator.pop(context);
+                //     },
+                //     child: Row(
+                //       mainAxisAlignment: MainAxisAlignment.center,
+                //       children: const [
+                //         Text("Удалить"),
+                //         Icon(Icons.delete),
+                //       ],
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),

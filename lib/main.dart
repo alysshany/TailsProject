@@ -34,8 +34,8 @@ class MyApp extends StatelessWidget {
           '/auth': (context) => const LandingPage(),
           '/data': (context) => DataPage(),
           '/stories': (context) => const StoriesPage(),
-          '/pickPet':(context) => const PickUpPage(),
-          '/projectInfo':(context) => const AboutProjectPage()
+          '/pickPet': (context) => const PickUpPage(),
+          '/projectInfo': (context) => const AboutProjectPage()
         },
         home: AnimatedSplashScreen(
           duration: 3000,
@@ -44,6 +44,9 @@ class MyApp extends StatelessWidget {
           splashTransition: SplashTransition.sizeTransition,
           pageTransitionType: PageTransitionType.leftToRight,
           backgroundColor: const Color.fromARGB(255, 241, 251, 255),
+        ),
+        theme: ThemeData(
+          scaffoldBackgroundColor: const Color.fromARGB(200, 229, 242, 255),
         ),
       ),
     );
