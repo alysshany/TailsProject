@@ -3,7 +3,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
-import 'package:tails_app/auth/auth.dart';
 import 'package:tails_app/auth/service.dart';
 import 'package:tails_app/data.dart';
 import 'package:tails_app/home.dart';

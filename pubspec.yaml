@@ -78,6 +78,7 @@ flutter:
     - images/cat-whiskers.png
     - images/image2.png
     - images/imgForStoriesOne.jpg
+    - images/paws.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
