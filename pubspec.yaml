@@ -45,6 +45,7 @@ dependencies:
   drop_shadow: ^0.1.0
   flip_card: ^0.7.0
   smooth_page_indicator: ^1.0.1
+  dot_navigation_bar: ^1.0.1+4
 
 
   # The following adds the Cupertino Icons font to your application.

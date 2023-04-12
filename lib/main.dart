@@ -8,6 +8,7 @@ import 'package:tails_app/data.dart';
 import 'package:tails_app/home.dart';
 import 'package:tails_app/info_about_project.dart';
 import 'package:tails_app/landing.dart';
+import 'package:tails_app/pets_view.dart';
 import 'package:tails_app/pick_up_the_pet.dart';
 import 'package:tails_app/stories.dart';
 
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
           '/data': (context) => DataPage(),
           '/stories': (context) => const StoriesPage(),
           '/pickPet': (context) => const PickUpPage(),
-          '/projectInfo': (context) => const AboutProjectPage()
+          '/projectInfo': (context) => const AboutProjectPage(),
+          '/petsView':(context) => const PetsViewPage()
         },
         home: AnimatedSplashScreen(
           duration: 3000,
@@ -44,9 +46,9 @@ class MyApp extends StatelessWidget {
           pageTransitionType: PageTransitionType.leftToRight,
           backgroundColor: const Color.fromARGB(255, 241, 251, 255),
         ),
-        theme: ThemeData(
-          scaffoldBackgroundColor: const Color.fromARGB(200, 229, 242, 255),
-        ),
+        // theme: ThemeData(
+        //   scaffoldBackgroundColor: const Color.fromARGB(200, 229, 242, 255),
+        // ),
       ),
     );
   }
