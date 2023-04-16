@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, '/petsView');
+          Navigator.pushNamed(context, '/firstView');
         },
         backgroundColor: const Color.fromARGB(199, 123, 189, 255),
         child: const Icon(Icons.navigate_next),

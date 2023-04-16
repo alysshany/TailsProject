@@ -2,15 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tails_app/data.dart';
 
-class PetsPage extends StatefulWidget {
+class PetsDataPage extends StatefulWidget {
   final String searchText;
-  const PetsPage({super.key, required this.searchText});
+  const PetsDataPage({super.key, required this.searchText});
 
   @override
-  State<PetsPage> createState() => _PetsPageState();
+  State<PetsDataPage> createState() => _PetsDataPageState();
 }
 
-class _PetsPageState extends State<PetsPage> {
+class _PetsDataPageState extends State<PetsDataPage> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(

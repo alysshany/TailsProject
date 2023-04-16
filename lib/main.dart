@@ -5,6 +5,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:tails_app/auth/service.dart';
 import 'package:tails_app/data.dart';
+import 'package:tails_app/first.dart';
 import 'package:tails_app/home.dart';
 import 'package:tails_app/info_about_project.dart';
 import 'package:tails_app/landing.dart';
@@ -36,7 +37,8 @@ class MyApp extends StatelessWidget {
           '/stories': (context) => const StoriesPage(),
           '/pickPet': (context) => const PickUpPage(),
           '/projectInfo': (context) => const AboutProjectPage(),
-          '/petsView':(context) => const PetsViewPage()
+          '/firstView':(context) => const FirstViewPage(),
+          '/petsView':(context) => const PetsViewPage(),
         },
         home: AnimatedSplashScreen(
           duration: 3000,

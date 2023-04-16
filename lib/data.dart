@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:tails_app/pets.dart';
+import 'package:tails_app/pets_data.dart';
 //import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DataPage extends StatefulWidget {
@@ -66,13 +66,6 @@ class _DataPageState extends State<DataPage> {
       imageController.text = widget.image.toString();
     }
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("widget.title!"),
-        backgroundColor: const Color.fromARGB(101, 133, 166, 255),
-        foregroundColor: const Color.fromARGB(200, 229, 242, 255),
-        centerTitle: true,
-        //automaticallyImplyLeading: false,
-      ),
       extendBody: true,
       bottomNavigationBar: FloatingNavbar(
         backgroundColor: const Color.fromARGB(200, 229, 242, 255),
@@ -236,7 +229,7 @@ class _DataPageState extends State<DataPage> {
             child: Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.01,
+                  height: MediaQuery.of(context).size.height * 0.12,
                 ),
                 Card(
                   color: const Color.fromARGB(200, 229, 242, 255),

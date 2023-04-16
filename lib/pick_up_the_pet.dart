@@ -21,7 +21,7 @@ class _PickUpPageState extends State<PickUpPage> {
       body: Column(
         children: <Widget> [
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.18,
+            height: MediaQuery.of(context).size.height * 0.15,
           ),
           const Center(
             child: Text(

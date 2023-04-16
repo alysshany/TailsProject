@@ -19,15 +19,12 @@ class _StoriesPageState extends State<StoriesPage> {
         centerTitle: true,
       ),
       body: Column(children: <Widget>[
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.02,
-        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.8,
-              height: MediaQuery.of(context).size.height * 0.25,
+              width: MediaQuery.of(context).size.width * 0.75,
+              height: MediaQuery.of(context).size.height * 0.20,
               child: Card(
                 elevation: 0,
                 child: FlipCard(
@@ -65,8 +62,8 @@ class _StoriesPageState extends State<StoriesPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.8,
-              height: MediaQuery.of(context).size.height * 0.25,
+              width: MediaQuery.of(context).size.width * 0.75,
+              height: MediaQuery.of(context).size.height * 0.20,
               child: Card(
                 elevation: 0,
                 child: FlipCard(
@@ -106,8 +103,8 @@ class _StoriesPageState extends State<StoriesPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.8,
-              height: MediaQuery.of(context).size.height * 0.25,
+              width: MediaQuery.of(context).size.width * 0.75,
+              height: MediaQuery.of(context).size.height * 0.20,
               child: Card(
                 elevation: 0,
                 child: FlipCard(
