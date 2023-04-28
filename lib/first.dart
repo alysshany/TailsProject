@@ -50,7 +50,7 @@ class _FirstViewPageState extends State<FirstViewPage> {
             leading: Icon(
               Icons.home,
             ),
-            title: const Text('Page 1'),
+            title: const Text('О проекте'),
             onTap: () {
               Navigator.pop(context);
             },
@@ -59,7 +59,7 @@ class _FirstViewPageState extends State<FirstViewPage> {
             leading: Icon(
               Icons.train,
             ),
-            title: const Text('Page 2'),
+            title: const Text('Забрать питомца'),
             onTap: () {
               Navigator.pop(context);
             },
