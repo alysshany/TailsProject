@@ -35,7 +35,38 @@ class _FirstViewPageState extends State<FirstViewPage> {
         ),
       ),
       body: list.elementAt(index),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: ListView(
+        // Important: Remove any padding from the ListView.
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(
+              color: Color.fromARGB(198, 137, 196, 254),
+            ),
+            child: Text('Drawer Header'),
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.home,
+            ),
+            title: const Text('Page 1'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.train,
+            ),
+            title: const Text('Page 2'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      ),
+      ),
       extendBody: true,
       bottomNavigationBar:  DotNavigationBar(
         
