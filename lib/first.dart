@@ -23,53 +23,53 @@ class _FirstViewPageState extends State<FirstViewPage> {
       _selectedTab = _SelectedTab.values[i];
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor:  Colors.transparent,
+        backgroundColor: Colors.transparent,
         iconTheme: const IconThemeData(
-          color: Colors.black, 
+          color: Colors.black,
         ),
       ),
       body: list.elementAt(index),
       drawer: Drawer(
         child: ListView(
-        // Important: Remove any padding from the ListView.
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Color.fromARGB(198, 137, 196, 254),
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromARGB(198, 137, 196, 254),
+              ),
+              child: Text('Drawer Header'),
             ),
-            child: Text('Drawer Header'),
-          ),
-          ListTile(
-            leading: Icon(
-              Icons.home,
+            ListTile(
+              leading: const Icon(
+                Icons.home,
+              ),
+              title: const Text('О проекте'),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
-            title: const Text('О проекте'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: Icon(
-              Icons.train,
+            ListTile(
+              leading: const Icon(
+                Icons.train,
+              ),
+              title: const Text('Забрать питомца'),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
-            title: const Text('Забрать питомца'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-        ],
-      ),
+          ],
+        ),
       ),
       extendBody: true,
-      bottomNavigationBar:  DotNavigationBar(
-        
+      bottomNavigationBar: DotNavigationBar(
         currentIndex: _SelectedTab.values.indexOf(_selectedTab),
         onTap: _handleIndexChanged,
         // dotIndicatorColor: Colors.black,
@@ -91,7 +91,6 @@ class _FirstViewPageState extends State<FirstViewPage> {
             icon: const Icon(Icons.person),
             selectedColor: const Color.fromARGB(255, 120, 194, 255),
           ),
-          
         ],
       ),
     );

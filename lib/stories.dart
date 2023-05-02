@@ -28,29 +28,31 @@ class _StoriesPageState extends State<StoriesPage> {
               child: Card(
                 elevation: 0,
                 child: FlipCard(
-                    fill: Fill.fillBack,
-                    direction: FlipDirection.HORIZONTAL,
-                    side: CardSide.FRONT,
-                    front: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Image.asset(
-                        "images/imgForStoriesOne.jpg",
-                        fit: BoxFit.cover,
-                        alignment: Alignment.topCenter,
+                  fill: Fill.fillBack,
+                  direction: FlipDirection.HORIZONTAL,
+                  side: CardSide.FRONT,
+                  front: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      "images/imgForStoriesOne.jpg",
+                      fit: BoxFit.cover,
+                      alignment: Alignment.topCenter,
+                    ),
+                  ),
+                  back: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontFamily: 'PlayfairDisplay', fontSize: 18),
                       ),
                     ),
-                    back: Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: 'PlayfairDisplay', fontSize: 18),
-                          ),
-                        ))),
+                  ),
+                ),
               ),
             ),
           ],
@@ -67,31 +69,33 @@ class _StoriesPageState extends State<StoriesPage> {
               child: Card(
                 elevation: 0,
                 child: FlipCard(
-                    fill: Fill.fillBack,
-                    direction: FlipDirection.HORIZONTAL,
-                    side: CardSide.FRONT,
-                    front: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Image.asset(
-                        "images/imgForStoriesOne.jpg",
-                        fit: BoxFit.cover,
-                        alignment: Alignment.topCenter,
+                  fill: Fill.fillBack,
+                  direction: FlipDirection.HORIZONTAL,
+                  side: CardSide.FRONT,
+                  front: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      "images/imgForStoriesOne.jpg",
+                      fit: BoxFit.cover,
+                      alignment: Alignment.topCenter,
+                    ),
+                  ),
+                  back: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                          fontSize: 18,
+                        ),
                       ),
                     ),
-                    back: Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'PlayfairDisplay',
-                              fontSize: 18,
-                            ),
-                          ),
-                        ))),
+                  ),
+                ),
               ),
             ),
           ],
@@ -108,29 +112,31 @@ class _StoriesPageState extends State<StoriesPage> {
               child: Card(
                 elevation: 0,
                 child: FlipCard(
-                    fill: Fill.fillBack,
-                    direction: FlipDirection.HORIZONTAL,
-                    side: CardSide.FRONT,
-                    front: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Image.asset(
-                        "images/imgForStoriesOne.jpg",
-                        fit: BoxFit.cover,
-                        alignment: Alignment.topCenter,
+                  fill: Fill.fillBack,
+                  direction: FlipDirection.HORIZONTAL,
+                  side: CardSide.FRONT,
+                  front: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      "images/imgForStoriesOne.jpg",
+                      fit: BoxFit.cover,
+                      alignment: Alignment.topCenter,
+                    ),
+                  ),
+                  back: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontFamily: 'PlayfairDisplay', fontSize: 18),
                       ),
                     ),
-                    back: Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: 'PlayfairDisplay', fontSize: 18),
-                          ),
-                        ))),
+                  ),
+                ),
               ),
             ),
           ],
