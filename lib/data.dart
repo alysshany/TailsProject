@@ -222,6 +222,14 @@ class _DataPageState extends State<DataPage> {
       //     );
       //   },
       // ),
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
+      ),
       body: SingleChildScrollView(
         child: Center(
           child: SizedBox(

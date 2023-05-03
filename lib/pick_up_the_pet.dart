@@ -12,16 +12,18 @@ class _PickUpPageState extends State<PickUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        //title: Image.asset("images/cat-whiskers.png"),
-        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
       ),
       body: Column(
         children: <Widget> [
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.15,
+            height: MediaQuery.of(context).size.height * 0.30,
           ),
           const Center(
             child: Text(

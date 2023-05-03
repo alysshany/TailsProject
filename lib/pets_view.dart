@@ -13,220 +13,143 @@ class _PetsViewPageState extends State<PetsViewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        centerTitle: true,
-      ),
-      body: Column(children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Center(
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height * 0.25,
-                width: MediaQuery.of(context).size.width * 0.9,
-                child: Center(
-                  child: Card(
-                    elevation: 0,
-                    color: const Color.fromARGB(200, 229, 242, 255),
-                    shape: RoundedRectangleBorder(
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height,
+          child:
+          ListView.builder(
+              scrollDirection: Axis.vertical,
+              itemBuilder: (context, index) {
+                return Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Center(
+                child: Card(
+                  elevation: 5,
+                  color: Color.fromARGB(197, 208, 229, 251),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: FlipCard(
+                    fill: Fill.fillBack,
+                    direction: FlipDirection.HORIZONTAL,
+                    side: CardSide.FRONT,
+                    front: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: FlipCard(
-                      fill: Fill.fillBack,
-                      direction: FlipDirection.HORIZONTAL,
-                      side: CardSide.FRONT,
-                      front: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Center(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              ClipRRect(
-                                borderRadius:
-                                    BorderRadius.circular(20), // Image border
-                                child: SizedBox.fromSize(
-                                  size:
-                                      const Size.fromRadius(48), // Image radius
-                                  child: Image.asset(
-                                    "images/imgForStoriesOne.jpg",
-                                    fit: BoxFit.cover,
-                                    alignment: Alignment.topCenter,
-                                  ),
-                                ),
-                              ),
-                              Row(
-                                children: <Widget>[
-                                  Center(
-                                    child: SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.2,
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: const [
-                                          Text(
-                                            'Name:                                             ',
-                                            style: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 255, 179, 0),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  Center(
-                                    child: SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.2,
-                                      child: Center(
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: const [
-                                            Center(
-                                              child: Text(
-                                                'Name:                                             ',
-                                                style: TextStyle(
-                                                  color: Color.fromARGB(
-                                                      255, 255, 179, 0),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Center(
-                                    child: SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.2,
-                                      child: Center(
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: const [
-                                            Center(
-                                              child: Text(
-                                                'Name:                                             ',
-                                                style: TextStyle(
-                                                  color: Color.fromARGB(
-                                                      255, 255, 179, 0),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
+                      child: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.42,
+                              height: MediaQuery.of(context).size.height * 0.30,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    width: MediaQuery.of(context).size.width * 0.42,
+                                    height: MediaQuery.of(context).size.height * 0.30,
+                                    child: ClipRRect(
+                                      borderRadius:
+                                          BorderRadius.circular(20), // Image border
+                                      child: SizedBox.fromSize(
+                                        size:
+                                            const Size.fromRadius(20), // Image radius
+                                        child: Image.asset(
+                                          "images/imgForStoriesOne.jpg",
+                                          fit: BoxFit.cover,
+                                          alignment: Alignment.topCenter,
                                         ),
                                       ),
                                     ),
                                   ),
                                 ],
-                              )
-                            ],
-                          ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.50,
+                              height: MediaQuery.of(context).size.height * 0.30,
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    height: MediaQuery.of(context).size.height * 0.05,
+                                    width: MediaQuery.of(context).size.width * 0.48,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Text("Игорь", style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 20))
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: MediaQuery.of(context).size.height * 0.20,
+                                    width: MediaQuery.of(context).size.width * 0.48,
+                                      child: 
+                                        Text("Настоящий мужчина и обладатель самых шикарных щечек в приюте.Таких котиков сразу, как только увидите, хочется потискать, погладить. Ну как пройти мимо таких шикарных белых щечек и не почесать их?", style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 12),
+                                        textAlign: TextAlign.center,)
+                                      
+                                  ),
+                                  SizedBox(
+                                    height: MediaQuery.of(context).size.height * 0.05,
+                                    width: MediaQuery.of(context).size.width * 0.50,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: <Widget> [
+                                          SizedBox(
+                                            width: MediaQuery.of(context).size.width * 0.15,
+                                            child:
+                                            Card(
+                                              
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius: BorderRadius.circular(10),
+                                              ),
+                                              child: Text("Кот", style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 14), textAlign: TextAlign.center ,)
+                                              ),
+                                          ),
+                                          SizedBox(
+                                            width: MediaQuery.of(context).size.width * 0.18,
+                                            child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius: BorderRadius.circular(10),
+                                              ),
+                                              child: Text("Мальчик", style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 14), textAlign: TextAlign.center,)
+                                              ),
+                                          ),
+                                          SizedBox(
+                                            width: MediaQuery.of(context).size.width * 0.15,
+                                            child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius: BorderRadius.circular(10),
+                                              ),
+                                              child: Text("3 года", style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 14), textAlign: TextAlign.center,)
+                                              ),
+                                          )
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
                         ),
                       ),
-                      back: Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: const Center(),
+                    ),
+                    back: Card(
+                      color: Color.fromARGB(197, 208, 229, 251),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
                       ),
+                      child: const Center(),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.05,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.75,
-              height: MediaQuery.of(context).size.height * 0.20,
-              child: Card(
-                elevation: 0,
-                child: FlipCard(
-                  fill: Fill.fillBack,
-                  direction: FlipDirection.HORIZONTAL,
-                  side: CardSide.FRONT,
-                  front: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.asset(
-                      "images/imgForStoriesOne.jpg",
-                      fit: BoxFit.cover,
-                      alignment: Alignment.topCenter,
-                    ),
-                  ),
-                  back: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'PlayfairDisplay',
-                          fontSize: 18,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.05,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.75,
-              height: MediaQuery.of(context).size.height * 0.20,
-              child: Card(
-                elevation: 0,
-                child: FlipCard(
-                  fill: Fill.fillBack,
-                  direction: FlipDirection.HORIZONTAL,
-                  side: CardSide.FRONT,
-                  front: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.asset(
-                      "images/imgForStoriesOne.jpg",
-                      fit: BoxFit.cover,
-                      alignment: Alignment.topCenter,
-                    ),
-                  ),
-                  back: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontFamily: 'PlayfairDisplay', fontSize: 18),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ]),
+            ],
+          );
+          },
+          ),
+          ),
+      ),
     );
   }
 }

@@ -13,35 +13,118 @@ class _StoriesPageState extends State<StoriesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        centerTitle: true,
-      ),
+      
       body: Column(children: <Widget>[
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.12,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.75,
-              height: MediaQuery.of(context).size.height * 0.20,
+              height: MediaQuery.of(context).size.height * 0.23,
               child: Card(
                 elevation: 0,
                 child: FlipCard(
                   fill: Fill.fillBack,
                   direction: FlipDirection.HORIZONTAL,
                   side: CardSide.FRONT,
-                  front: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.asset(
-                      "images/imgForStoriesOne.jpg",
-                      fit: BoxFit.cover,
-                      alignment: Alignment.topCenter,
+                  front: Card(
+                    elevation: 30,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        "images/imgForStoriesOne.jpg",
+                        fit: BoxFit.cover,
+                        alignment: Alignment.topCenter,
+                      ),
                     ),
                   ),
                   back: Card(
+                    elevation: 30,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.65,
+                              height: MediaQuery.of(context).size.height * 0.05,
+                              child: Text(
+                                "Рыжик",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontFamily: 'PlayfairDisplay', fontSize: 22),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.65,
+                              height: MediaQuery.of(context).size.height * 0.15,
+                              child: Text(
+                                "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontFamily: 'PlayfairDisplay', fontSize: 14),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.05,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.75,
+              height: MediaQuery.of(context).size.height * 0.23,
+              child: Card(
+                elevation: 0,
+                child: FlipCard(
+                  fill: Fill.fillBack,
+                  direction: FlipDirection.HORIZONTAL,
+                  side: CardSide.FRONT,
+                  front: Card(
+                    elevation: 30,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        "images/imgForStoriesOne.jpg",
+                        fit: BoxFit.cover,
+                        alignment: Alignment.topCenter,
+                      ),
+                    ),
+                  ),
+                  back: Card(
+                    elevation: 30,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      
                     ),
                     child: const Center(
                       child: Text(
@@ -65,65 +148,30 @@ class _StoriesPageState extends State<StoriesPage> {
           children: [
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.75,
-              height: MediaQuery.of(context).size.height * 0.20,
+              height: MediaQuery.of(context).size.height * 0.23,
               child: Card(
                 elevation: 0,
                 child: FlipCard(
                   fill: Fill.fillBack,
                   direction: FlipDirection.HORIZONTAL,
                   side: CardSide.FRONT,
-                  front: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.asset(
-                      "images/imgForStoriesOne.jpg",
-                      fit: BoxFit.cover,
-                      alignment: Alignment.topCenter,
-                    ),
-                  ),
-                  back: Card(
+                  front: Card(
+                    elevation: 30,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(20),
+                      
                     ),
-                    child: const Center(
-                      child: Text(
-                        "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'PlayfairDisplay',
-                          fontSize: 18,
-                        ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        "images/imgForStoriesOne.jpg",
+                        fit: BoxFit.cover,
+                        alignment: Alignment.topCenter,
                       ),
                     ),
                   ),
-                ),
-              ),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.05,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.75,
-              height: MediaQuery.of(context).size.height * 0.20,
-              child: Card(
-                elevation: 0,
-                child: FlipCard(
-                  fill: Fill.fillBack,
-                  direction: FlipDirection.HORIZONTAL,
-                  side: CardSide.FRONT,
-                  front: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.asset(
-                      "images/imgForStoriesOne.jpg",
-                      fit: BoxFit.cover,
-                      alignment: Alignment.topCenter,
-                    ),
-                  ),
                   back: Card(
+                    elevation: 30,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
                     ),

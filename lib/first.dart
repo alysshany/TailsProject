@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:tails_app/data.dart';
+import 'package:tails_app/personal.dart';
 import 'package:tails_app/pets_data.dart';
 import 'package:tails_app/pets_view.dart';
 import 'package:tails_app/stories.dart';
@@ -13,7 +14,7 @@ class FirstViewPage extends StatefulWidget {
 }
 
 class _FirstViewPageState extends State<FirstViewPage> {
-  final list = [const PetsViewPage(), const StoriesPage(), DataPage()];
+  final list = [const PetsViewPage(), const StoriesPage(), PersonalPage()];
   int index = 0;
   var _selectedTab = _SelectedTab.home;
 
@@ -45,24 +46,35 @@ class _FirstViewPageState extends State<FirstViewPage> {
               decoration: BoxDecoration(
                 color: Color.fromARGB(198, 137, 196, 254),
               ),
-              child: Text('Drawer Header'),
+              child: Text('Drawer Header', style: TextStyle(fontFamily: 'PlayfairDisplay',),),
             ),
             ListTile(
               leading: const Icon(
                 Icons.home,
               ),
-              title: const Text('О проекте'),
+              title: const Text('О проекте', style: TextStyle(fontFamily: 'PlayfairDisplay',),),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context, '/projectInfo');
               },
             ),
             ListTile(
               leading: const Icon(
                 Icons.train,
               ),
-              title: const Text('Забрать питомца'),
+              title: const Text('Забрать питомца', style: TextStyle(fontFamily: 'PlayfairDisplay',),),
+              
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context, '/pickPet');
+              },
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.train,
+              ),
+              title: const Text('Добавить питомца', style: TextStyle(fontFamily: 'PlayfairDisplay',),),
+              
+              onTap: () {
+                Navigator.pushNamed(context, '/data');
               },
             ),
           ],
@@ -77,13 +89,13 @@ class _FirstViewPageState extends State<FirstViewPage> {
           /// Home
           DotNavigationBarItem(
             icon: const Icon(Icons.home),
-            selectedColor: const Color.fromARGB(255, 63, 168, 255),
+            selectedColor: const Color.fromARGB(255, 120, 194, 255),
           ),
 
           /// Likes
           DotNavigationBarItem(
             icon: const Icon(Icons.favorite_border),
-            selectedColor: const Color.fromARGB(255, 83, 177, 255),
+            selectedColor: const Color.fromARGB(255, 120, 194, 255),
           ),
 
           /// Profile

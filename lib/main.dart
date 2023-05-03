@@ -9,6 +9,7 @@ import 'package:tails_app/first.dart';
 import 'package:tails_app/home.dart';
 import 'package:tails_app/info_about_project.dart';
 import 'package:tails_app/landing.dart';
+import 'package:tails_app/personal.dart';
 import 'package:tails_app/pets_view.dart';
 import 'package:tails_app/pick_up_the_pet.dart';
 import 'package:tails_app/stories.dart';
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
           '/projectInfo': (context) => const AboutProjectPage(),
           '/firstView':(context) => const FirstViewPage(),
           '/petsView':(context) => const PetsViewPage(),
+          '/personal':(context) => const PersonalPage()
         },
         home: AnimatedSplashScreen(
           duration: 3000,
