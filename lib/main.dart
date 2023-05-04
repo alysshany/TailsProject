@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
           nextScreen: const HomePage(),
           splashTransition: SplashTransition.sizeTransition,
           pageTransitionType: PageTransitionType.leftToRight,
-          backgroundColor: const Color.fromARGB(255, 241, 251, 255),
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
         ),
         // theme: ThemeData(
         //   scaffoldBackgroundColor: const Color.fromARGB(200, 229, 242, 255),

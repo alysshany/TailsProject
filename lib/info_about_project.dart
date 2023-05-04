@@ -11,7 +11,6 @@ class AboutProjectPage extends StatefulWidget {
 
 class _AboutProjectPageState extends State<AboutProjectPage> {
   final controller = PageController(viewportFraction: 0.8, keepPage: true);
-  bool showButton = false;
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +24,20 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
         margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 30),
         child: Column(
           children: <Widget>[
-            Container(
-              alignment: Alignment.topCenter,
-              child: ClipRRect(
-                child: DropShadow(
-                  blurRadius: 20,
-                  borderRadius: 15,
-                  child: Image.asset("images/paws.png"),
-                  color: const Color.fromARGB(198, 137, 196, 254),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.3,
+              child: Container(
+                alignment: Alignment.topCenter,
+                child: ClipRRect(
+                  child: DropShadow(
+                    blurRadius: 15,
+                    borderRadius: 20,
+                    child: Image.asset("images/bluePawn.png"),
+                    color: const Color.fromARGB(198, 137, 196, 254),
+                  ),
                 ),
               ),
             ),
@@ -69,14 +74,20 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
         margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 30),
         child: Column(
           children: <Widget>[
-            Container(
-              alignment: Alignment.topCenter,
-              child: ClipRRect(
-                child: DropShadow(
-                  blurRadius: 20,
-                  borderRadius: 15,
-                  child: Image.asset("images/paws.png"),
-                  color: const Color.fromARGB(198, 137, 196, 254),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.3,
+              child: Container(
+                alignment: Alignment.topCenter,
+                child: ClipRRect(
+                  child: DropShadow(
+                    blurRadius: 15,
+                    borderRadius: 20,
+                    child: Image.asset("images/bluePawn.png"),
+                    color: const Color.fromARGB(198, 137, 196, 254),
+                  ),
                 ),
               ),
             ),
@@ -113,14 +124,20 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
         margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 30),
         child: Column(
           children: <Widget>[
-            Container(
-              alignment: Alignment.topCenter,
-              child: ClipRRect(
-                child: DropShadow(
-                  blurRadius: 20,
-                  borderRadius: 15,
-                  child: Image.asset("images/paws.png"),
-                  color: const Color.fromARGB(198, 137, 196, 254),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.3,
+              child: Container(
+                alignment: Alignment.topCenter,
+                child: ClipRRect(
+                  child: DropShadow(
+                    blurRadius: 15,
+                    borderRadius: 20,
+                    child: Image.asset("images/bluePawn.png"),
+                    color: const Color.fromARGB(198, 137, 196, 254),
+                  ),
                 ),
               ),
             ),
@@ -153,14 +170,20 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
         margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 30),
         child: Column(
           children: <Widget>[
-            Container(
-              alignment: Alignment.topCenter,
-              child: ClipRRect(
-                child: DropShadow(
-                  blurRadius: 20,
-                  borderRadius: 15,
-                  child: Image.asset("images/paws.png"),
-                  color: const Color.fromARGB(198, 137, 196, 254),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.3,
+              child: Container(
+                alignment: Alignment.topCenter,
+                child: ClipRRect(
+                  child: DropShadow(
+                    blurRadius: 15,
+                    borderRadius: 20,
+                    child: Image.asset("images/bluePawn.png"),
+                    color: const Color.fromARGB(198, 137, 196, 254),
+                  ),
                 ),
               ),
             ),
@@ -204,7 +227,6 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
                 controller: controller,
                 // itemCount: pages.length,
                 itemBuilder: (_, index) {
-                  showButton = true;
                   return pages[index % pages.length];
                 },
               ),
@@ -226,17 +248,6 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
               ),
             ),
           ],
-        ),
-      ),
-      floatingActionButton: AnimatedOpacity(
-        duration: const Duration(milliseconds: 400),
-        opacity: showButton ? 1 : 0,
-        child: FloatingActionButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/auth');
-          },
-          backgroundColor: const Color.fromARGB(199, 123, 189, 255),
-          child: const Icon(Icons.navigate_next),
         ),
       ),
     );

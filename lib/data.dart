@@ -68,7 +68,7 @@ class _DataPageState extends State<DataPage> {
     return Scaffold(
       extendBody: true,
       bottomNavigationBar: FloatingNavbar(
-        backgroundColor: const Color.fromARGB(200, 229, 242, 255),
+        backgroundColor: const Color.fromARGB(255, 241, 251, 255),
         onTap: (int val) {},
         currentIndex: -1,
         items: [
@@ -83,7 +83,7 @@ class _DataPageState extends State<DataPage> {
                 ),
                 child: IconButton(
                   icon: const Icon(Icons.add),
-                  color: const Color.fromARGB(101, 133, 166, 255),
+                  color: Color.fromARGB(100, 0, 0, 0),
                   onPressed: () async {
                     pets.name = nameController.text;
                     pets.kind = kindController.text;
@@ -126,7 +126,7 @@ class _DataPageState extends State<DataPage> {
                 ),
                 child: IconButton(
                   icon: const Icon(Icons.update),
-                  color: const Color.fromARGB(101, 133, 166, 255),
+                  color: Color.fromARGB(100, 0, 0, 0),
                   onPressed: () async {
                     CollectionReference petsRef =
                         FirebaseFirestore.instance.collection('pets');
@@ -163,7 +163,7 @@ class _DataPageState extends State<DataPage> {
                 ),
                 child: IconButton(
                   icon: const Icon(Icons.delete),
-                  color: const Color.fromARGB(101, 133, 166, 255),
+                  color: Color.fromARGB(100, 0, 0, 0),
                   onPressed: () async {
                     CollectionReference petsRef =
                         FirebaseFirestore.instance.collection('pets');
@@ -240,26 +240,27 @@ class _DataPageState extends State<DataPage> {
                   height: MediaQuery.of(context).size.height * 0.12,
                 ),
                 Card(
-                  color: const Color.fromARGB(200, 229, 242, 255),
+                  color: const Color.fromARGB(255, 231, 243, 255),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
+                  elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Имя"),
+                      label: const Text("Имя", style: TextStyle(fontFamily: 'PlayfairDisplay', )),
                       labelStyle: const TextStyle(
-                        color: Color.fromARGB(101, 133, 166, 255),
+                        color: Color.fromARGB(100, 0, 0, 0),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: Color.fromARGB(101, 133, 166, 255),
+                          color: const Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: Color.fromARGB(101, 133, 166, 255),
+                          color:const Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                     ),
@@ -268,142 +269,147 @@ class _DataPageState extends State<DataPage> {
                   ),
                 ),
                 Card(
-                  color: const Color.fromARGB(200, 229, 242, 255),
+                  color: const Color.fromARGB(255, 231, 243, 255),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
+                  elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Вид  "),
+                      label: const Text("Вид", style: TextStyle(fontFamily: 'PlayfairDisplay', )),
                       labelStyle: const TextStyle(
-                        color: Color.fromARGB(101, 133, 166, 255),
+                        color: Color.fromARGB(100, 0, 0, 0),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: Color.fromARGB(101, 133, 166, 255),
+                          color: const Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: Color.fromARGB(101, 133, 166, 255),
+                          color: const Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                     ),
-                    controller: nameController,
+                    controller: kindController,
                     cursorColor: const Color.fromARGB(101, 133, 166, 255),
                   ),
                 ),
                 Card(
-                  color: const Color.fromARGB(200, 229, 242, 255),
+                  color: const Color.fromARGB(255, 231, 243, 255),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
+                  elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Пол"),
+                      label: const Text("Пол", style: TextStyle(fontFamily: 'PlayfairDisplay', )),
                       labelStyle: const TextStyle(
-                        color: Color.fromARGB(101, 133, 166, 255),
+                        color: Color.fromARGB(100, 0, 0, 0),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: Color.fromARGB(101, 133, 166, 255),
+                          color: const Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: Color.fromARGB(101, 133, 166, 255),
+                          color: const Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                     ),
-                    controller: nameController,
+                    controller: genderController,
                     cursorColor: const Color.fromARGB(101, 133, 166, 255),
                   ),
                 ),
                 Card(
-                  color: const Color.fromARGB(200, 229, 242, 255),
+                  color: const Color.fromARGB(255, 231, 243, 255),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
+                  elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Возраст"),
+                      label: const Text("Возраст", style: TextStyle(fontFamily: 'PlayfairDisplay', )),
                       labelStyle: const TextStyle(
-                        color: Color.fromARGB(101, 133, 166, 255),
+                        color: Color.fromARGB(100, 0, 0, 0),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: Color.fromARGB(101, 133, 166, 255),
+                          color: const Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: Color.fromARGB(101, 133, 166, 255),
+                          color: const Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                     ),
-                    controller: nameController,
+                    controller: ageController,
                     cursorColor: const Color.fromARGB(101, 133, 166, 255),
                   ),
                 ),
                 Card(
-                  color: const Color.fromARGB(200, 229, 242, 255),
+                  color: const Color.fromARGB(255, 231, 243, 255),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
+                  elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Описание"),
+                      label: const Text("Описание", style: TextStyle(fontFamily: 'PlayfairDisplay', )),
                       labelStyle: const TextStyle(
-                        color: Color.fromARGB(101, 133, 166, 255),
+                        color: Color.fromARGB(100, 0, 0, 0),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: Color.fromARGB(101, 133, 166, 255),
+                          color: const Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: Color.fromARGB(101, 133, 166, 255),
+                          color: const Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                     ),
-                    controller: nameController,
+                    controller: descriptionController,
                     cursorColor: const Color.fromARGB(101, 133, 166, 255),
                   ),
                 ),
                 Card(
-                  color: const Color.fromARGB(200, 229, 242, 255),
+                  color: const Color.fromARGB(255, 231, 243, 255),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
+                  elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Фото"),
+                      label: const Text("Фото", style: TextStyle(fontFamily: 'PlayfairDisplay', )),
                       labelStyle: const TextStyle(
-                        color: Color.fromARGB(101, 133, 166, 255),
+                        color: Color.fromARGB(100, 0, 0, 0),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: Color.fromARGB(101, 133, 166, 255),
+                          color: const Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: Color.fromARGB(101, 133, 166, 255),
+                          color: const Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                     ),
-                    controller: nameController,
+                    controller: imageController,
                     cursorColor: const Color.fromARGB(101, 133, 166, 255),
                   ),
                 ),

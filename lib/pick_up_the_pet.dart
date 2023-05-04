@@ -43,7 +43,7 @@ class _PickUpPageState extends State<PickUpPage> {
                 width: MediaQuery.of(context).size.width * 0.30,
                 child: Card(
                   elevation: 20,
-                  color: const Color.fromARGB(255, 168, 212, 255),
+                  color: const Color.fromARGB(255, 231, 243, 255),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -69,7 +69,7 @@ class _PickUpPageState extends State<PickUpPage> {
                 width: MediaQuery.of(context).size.width * 0.30,
                 child: Card(
                   elevation: 20,
-                  color: const Color.fromARGB(255, 168, 212, 255),
+                  color: const Color.fromARGB(255, 231, 243, 255),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -95,7 +95,7 @@ class _PickUpPageState extends State<PickUpPage> {
                 width: MediaQuery.of(context).size.width * 0.30,
                 child: Card(
                   elevation: 20,
-                  color: const Color.fromARGB(255, 168, 212, 255),
+                  color: const Color.fromARGB(255, 231, 243, 255),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -129,7 +129,7 @@ class _PickUpPageState extends State<PickUpPage> {
                 width: MediaQuery.of(context).size.width * 0.30,
                 child: Card(
                   elevation: 20,
-                  color: const Color.fromARGB(255, 168, 212, 255),
+                  color: const Color.fromARGB(255, 231, 243, 255),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -155,7 +155,7 @@ class _PickUpPageState extends State<PickUpPage> {
                 width: MediaQuery.of(context).size.width * 0.30,
                 child: Card(
                   elevation: 20,
-                  color: const Color.fromARGB(255, 168, 212, 255),
+                  color: const Color.fromARGB(255, 231, 243, 255),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),

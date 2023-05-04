@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
+import 'package:tails_app/auth/auth.dart';
+import 'package:tails_app/auth/service.dart';
 import 'package:tails_app/data.dart';
 import 'package:tails_app/personal.dart';
 import 'package:tails_app/pets_data.dart';
 import 'package:tails_app/pets_view.dart';
 import 'package:tails_app/stories.dart';
+
 
 class FirstViewPage extends StatefulWidget {
   const FirstViewPage({super.key});
@@ -42,11 +45,19 @@ class _FirstViewPageState extends State<FirstViewPage> {
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
+             DrawerHeader(
               decoration: BoxDecoration(
-                color: Color.fromARGB(198, 137, 196, 254),
+                color: const Color.fromARGB(255, 231, 243, 255),
               ),
-              child: Text('Drawer Header', style: TextStyle(fontFamily: 'PlayfairDisplay',),),
+              child: UserAccountsDrawerHeader(
+                accountName: const Text("Drawer"), 
+                accountEmail: const Text("TDD"), 
+                otherAccountsPictures: [IconButton(
+                  onPressed: () => { 
+                    AuthServices().logOut(),
+                    }, 
+                  icon: const Icon(Icons.exit_to_app)
+                  )],),
             ),
             ListTile(
               leading: const Icon(
@@ -89,19 +100,19 @@ class _FirstViewPageState extends State<FirstViewPage> {
           /// Home
           DotNavigationBarItem(
             icon: const Icon(Icons.home),
-            selectedColor: const Color.fromARGB(255, 120, 194, 255),
+            selectedColor: const Color.fromARGB(199, 123, 189, 255),
           ),
 
           /// Likes
           DotNavigationBarItem(
             icon: const Icon(Icons.favorite_border),
-            selectedColor: const Color.fromARGB(255, 120, 194, 255),
+            selectedColor: const Color.fromARGB(199, 123, 189, 255),
           ),
 
           /// Profile
           DotNavigationBarItem(
             icon: const Icon(Icons.person),
-            selectedColor: const Color.fromARGB(255, 120, 194, 255),
+            selectedColor: const Color.fromARGB(199, 123, 189, 255),
           ),
         ],
       ),

@@ -26,7 +26,7 @@ class _PersonalPageState extends State<PersonalPage> {
                   children: [
                     Container(
                     padding: const EdgeInsets.all(8), // Border width
-                    decoration: const BoxDecoration(color:   Color.fromARGB(255, 120, 194, 255), shape: BoxShape.circle),
+                    decoration: const BoxDecoration(color: const Color.fromARGB(255, 231, 243, 255), shape: BoxShape.circle),
                     child: ClipOval(
                       child: SizedBox.fromSize(
                         size: const Size.fromRadius(48), // 

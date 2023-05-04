@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, '/firstView');
+          Navigator.pushNamed(context, '/auth');
         },
         backgroundColor: const Color.fromARGB(199, 123, 189, 255),
         child: const Icon(Icons.navigate_next),

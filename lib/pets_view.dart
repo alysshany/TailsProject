@@ -26,7 +26,7 @@ class _PetsViewPageState extends State<PetsViewPage> {
               Center(
                 child: Card(
                   elevation: 5,
-                  color: Color.fromARGB(197, 208, 229, 251),
+                  color: const Color.fromARGB(255, 231, 243, 255),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -99,7 +99,6 @@ class _PetsViewPageState extends State<PetsViewPage> {
                                             width: MediaQuery.of(context).size.width * 0.15,
                                             child:
                                             Card(
-                                              
                                               shape: RoundedRectangleBorder(
                                                 borderRadius: BorderRadius.circular(10),
                                               ),
@@ -135,7 +134,7 @@ class _PetsViewPageState extends State<PetsViewPage> {
                       ),
                     ),
                     back: Card(
-                      color: Color.fromARGB(197, 208, 229, 251),
+                      color: const Color.fromARGB(255, 231, 243, 255),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
