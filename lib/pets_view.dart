@@ -77,7 +77,7 @@ class _PetsViewPageState extends State<PetsViewPage> {
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        Text("Игорь", style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 20))
+                                        Text("Игорь)", style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 20))
                                       ],
                                     ),
                                   ),
