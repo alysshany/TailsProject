@@ -38,9 +38,9 @@ class MyApp extends StatelessWidget {
           '/stories': (context) => const StoriesPage(),
           '/pickPet': (context) => const PickUpPage(),
           '/projectInfo': (context) => const AboutProjectPage(),
-          '/firstView':(context) => const FirstViewPage(),
-          '/petsView':(context) => const PetsViewPage(),
-          '/personal':(context) => const PersonalPage()
+          '/firstView': (context) => const FirstViewPage(),
+          '/petsView': (context) => PetsViewPage(),
+          '/personal': (context) => const PersonalPage()
         },
         home: AnimatedSplashScreen(
           duration: 3000,

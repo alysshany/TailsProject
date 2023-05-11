@@ -37,7 +37,6 @@ class _DataPageState extends State<DataPage> {
   TextEditingController ageController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
   TextEditingController imageController = TextEditingController();
-
   Pets pets = Pets();
 
   @override
@@ -247,7 +246,10 @@ class _DataPageState extends State<DataPage> {
                   elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Имя", style: TextStyle(fontFamily: 'PlayfairDisplay', )),
+                      label: const Text("Имя",
+                          style: TextStyle(
+                            fontFamily: 'PlayfairDisplay',
+                          )),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
                       ),
@@ -260,7 +262,7 @@ class _DataPageState extends State<DataPage> {
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color:const Color.fromARGB(255, 231, 243, 255),
+                          color: const Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                     ),
@@ -276,7 +278,10 @@ class _DataPageState extends State<DataPage> {
                   elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Вид", style: TextStyle(fontFamily: 'PlayfairDisplay', )),
+                      label: const Text("Вид",
+                          style: TextStyle(
+                            fontFamily: 'PlayfairDisplay',
+                          )),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
                       ),
@@ -305,7 +310,10 @@ class _DataPageState extends State<DataPage> {
                   elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Пол", style: TextStyle(fontFamily: 'PlayfairDisplay', )),
+                      label: const Text("Пол",
+                          style: TextStyle(
+                            fontFamily: 'PlayfairDisplay',
+                          )),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
                       ),
@@ -334,7 +342,10 @@ class _DataPageState extends State<DataPage> {
                   elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Возраст", style: TextStyle(fontFamily: 'PlayfairDisplay', )),
+                      label: const Text("Возраст",
+                          style: TextStyle(
+                            fontFamily: 'PlayfairDisplay',
+                          )),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
                       ),
@@ -363,7 +374,10 @@ class _DataPageState extends State<DataPage> {
                   elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Описание", style: TextStyle(fontFamily: 'PlayfairDisplay', )),
+                      label: const Text("Описание",
+                          style: TextStyle(
+                            fontFamily: 'PlayfairDisplay',
+                          )),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
                       ),
@@ -392,7 +406,10 @@ class _DataPageState extends State<DataPage> {
                   elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Фото", style: TextStyle(fontFamily: 'PlayfairDisplay', )),
+                      label: const Text("Фото",
+                          style: TextStyle(
+                            fontFamily: 'PlayfairDisplay',
+                          )),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
                       ),

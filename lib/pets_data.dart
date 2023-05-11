@@ -1,10 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tails_app/data.dart';
 
 class PetsDataPage extends StatefulWidget {
-  final String searchText;
-  const PetsDataPage({super.key, required this.searchText});
+  //final String searchText;
+  const PetsDataPage({super.key});
 
   @override
   State<PetsDataPage> createState() => _PetsDataPageState();
@@ -14,7 +15,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      //stream: FirebaseFirestore.instance.collection("pets").snapshots(),
+      stream: FirebaseFirestore.instance.collection("pets").snapshots(),
       builder: (context, AsyncSnapshot<dynamic> snapshot) {
         if (!snapshot.hasData) {
           return const Center(
@@ -23,17 +24,18 @@ class _PetsDataPageState extends State<PetsDataPage> {
             ),
           );
         } else {
-          var list = snapshot.data.docs
-              .where((x) => x['name']
-                      .toLowerCase()
-                      .contains(widget.searchText.toLowerCase())
-                  ? true
-                  : false)
-              .toList();
+          // var list = snapshot.data.docs
+          //     .where((x) => x['name']
+          //             .toLowerCase()
+          //             .contains(widget.searchText.toLowerCase())
+          //         ? true
+          //         : false)
+          //     .toList();
           return ListView.builder(
             physics: const BouncingScrollPhysics(),
-            itemCount: list.length,
-            itemBuilder: (context, index) => buildList(context, list[index]),
+            itemCount: snapshot.data.docs.length,
+            itemBuilder: (context, index) =>
+                buildList(context, snapshot.data.docs[index]),
           );
         }
       },
