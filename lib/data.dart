@@ -10,7 +10,7 @@ class DataPage extends StatefulWidget {
   String? name;
   String? kind;
   String? gender;
-  String? age;
+  int? age;
   String? description;
   String? image;
 
@@ -87,7 +87,7 @@ class _DataPageState extends State<DataPage> {
                     pets.name = nameController.text;
                     pets.kind = kindController.text;
                     pets.gender = genderController.text;
-                    pets.age = ageController.text;
+                    pets.age = int.parse(ageController.text);
                     pets.description = descriptionController.text;
                     pets.image = imageController.text;
                     CollectionReference petsRef =

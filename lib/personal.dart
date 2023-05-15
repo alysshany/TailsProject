@@ -1,4 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:tails_app/auth/auth.dart';
+import 'package:tails_app/auth/service.dart';
 
 class PersonalPage extends StatefulWidget {
   const PersonalPage({super.key});
@@ -8,8 +12,26 @@ class PersonalPage extends StatefulWidget {
 }
 
 class _PersonalPageState extends State<PersonalPage> {
+  AuthServices _authServices = AuthServices();
+
+  bool? active;
+
+
   @override
   Widget build(BuildContext context) {
+  //     var user = FirebaseFirestore.instance.collection("admins").doc(FirebaseAuth.instance.currentUser!.email.toString()).snapshots().listen((datasnapshot) {
+  //     //FINDING A SPECIFICDOCUMENT IS EXISTING INSIDE A COLLECTION
+
+  //   if (datasnapshot.exists) {
+  //     setState(() {
+  //       active = true;
+  //     });
+  //   } else if (!datasnapshot.exists) {
+  //     setState(() {
+  //       active = false;
+  //     });
+  //   }
+  // });
     return Scaffold(
       body: Center(
         child: Column(
@@ -43,20 +65,13 @@ class _PersonalPageState extends State<PersonalPage> {
                   children: [
                     Row(
                       children: [
-                        Text("Статус", style: TextStyle(
-                                    fontFamily: 'PlayfairDisplay', fontSize: 16)),
-                        
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text("Имя", style: TextStyle(
+                        Text(FirebaseAuth.instance.currentUser!.email.toString() , style: TextStyle(
                                     fontFamily: 'PlayfairDisplay', fontSize: 16)),
                       ],
                     ),
                     Row(
                       children: [
-                        Text("Логин", style: TextStyle(
+                        Text("fghi", style: TextStyle(
                                     fontFamily: 'PlayfairDisplay', fontSize: 16)),
                       ],
                     ),

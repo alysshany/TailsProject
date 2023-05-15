@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:tails_app/auth/model.dart';
 import 'package:tails_app/auth/service.dart';
@@ -27,6 +28,15 @@ class _AuthPageState extends State<AuthPage> {
   signUp() async {
     UserModel? user = await authServices.signUp(
         emailController.text, passwordController.text);
+
+    // CollectionReference users = FirebaseFirestore.instance.collection("users");
+
+    // await users.add(
+    //   {
+    //     'login': emailController.text,
+    //     'role': "client"
+    //   }
+    // );
     return user;
   }
 
