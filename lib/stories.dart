@@ -61,8 +61,9 @@ class _StoriesPageState extends State<StoriesPage> {
                                   "Рыжик",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      fontFamily: 'PlayfairDisplay',
-                                      fontSize: 22),
+                                    fontFamily: 'PlayfairDisplay',
+                                    fontSize: 22,
+                                  ),
                                 ),
                               ),
                             ],
@@ -78,8 +79,9 @@ class _StoriesPageState extends State<StoriesPage> {
                                   "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      fontFamily: 'PlayfairDisplay',
-                                      fontSize: 14),
+                                    fontFamily: 'PlayfairDisplay',
+                                    fontSize: 14,
+                                  ),
                                 ),
                               ),
                             ],
@@ -103,9 +105,6 @@ class _StoriesPageState extends State<StoriesPage> {
                 height: MediaQuery.of(context).size.height * 0.23,
                 child: Card(
                   elevation: 0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
                   child: FlipCard(
                     fill: Fill.fillBack,
                     direction: FlipDirection.HORIZONTAL,
@@ -129,13 +128,45 @@ class _StoriesPageState extends State<StoriesPage> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: const Center(
-                        child: Text(
-                          "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontFamily: 'PlayfairDisplay', fontSize: 18),
-                        ),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.65,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.05,
+                                child: const Text(
+                                  "Рыжик",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'PlayfairDisplay',
+                                    fontSize: 22,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.65,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.15,
+                                child: const Text(
+                                  "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'PlayfairDisplay',
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -175,15 +206,47 @@ class _StoriesPageState extends State<StoriesPage> {
                     back: Card(
                       elevation: 10,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                      child: const Center(
-                        child: Text(
-                          "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontFamily: 'PlayfairDisplay', fontSize: 18),
-                        ),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.65,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.05,
+                                child: const Text(
+                                  "Рыжик",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'PlayfairDisplay',
+                                    fontSize: 22,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.65,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.15,
+                                child: const Text(
+                                  "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'PlayfairDisplay',
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),

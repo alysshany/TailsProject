@@ -1,16 +1,43 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flip_card/flip_card.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tails_app/data.dart';
 
 class PetsDataPage extends StatefulWidget {
   //final String searchText;
-  const PetsDataPage({super.key});
-
+  bool? active;
+  PetsDataPage({super.key, this.active});
   @override
   State<PetsDataPage> createState() => _PetsDataPageState();
 }
 
 class _PetsDataPageState extends State<PetsDataPage> {
+  getUser() {
+    var user = FirebaseFirestore.instance
+        .collection("admins")
+        .doc(FirebaseAuth.instance.currentUser!.email.toString())
+        .snapshots()
+        .listen(
+      (datasnapshot) {
+        if (datasnapshot.exists) {
+          setState(
+            () {
+              widget.active = true;
+            },
+          );
+        } else if (!datasnapshot.exists) {
+          setState(
+            () {
+              widget.active = false;
+            },
+          );
+        }
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
@@ -19,7 +46,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
         if (!snapshot.hasData) {
           return const Center(
             child: CircularProgressIndicator(
-              color: Colors.white,
+              color: Color.fromARGB(198, 137, 196, 254),
             ),
           );
         } else {
@@ -66,7 +93,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
                         children: [
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.42,
-                            height: MediaQuery.of(context).size.height * 0.27,
+                            height: MediaQuery.of(context).size.height * 0.30,
                             child: ClipRRect(
                               borderRadius:
                                   BorderRadius.circular(20), // Image border
@@ -127,7 +154,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Text(
-                                      docs.data()['king'] ?? "",
+                                      docs.data()['kind'] ?? "",
                                       style: const TextStyle(
                                           fontFamily: 'PlayfairDisplay',
                                           fontSize: 14),
@@ -199,7 +226,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
                       children: [
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.5,
-                          height: MediaQuery.of(context).size.height * 0.05,
+                          height: MediaQuery.of(context).size.height * 0.04,
                           child: const Text(
                             "Стерилизация/кастрация:",
                             style: TextStyle(
@@ -210,7 +237,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
                         ),
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.2,
-                          height: MediaQuery.of(context).size.height * 0.05,
+                          height: MediaQuery.of(context).size.height * 0.04,
                           child: const Text(
                             "Да",
                             textAlign: TextAlign.center,
@@ -227,7 +254,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
                       children: [
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.5,
-                          height: MediaQuery.of(context).size.height * 0.05,
+                          height: MediaQuery.of(context).size.height * 0.04,
                           child: const Text(
                             "Обработка от паразитов:",
                             style: TextStyle(
@@ -238,7 +265,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
                         ),
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.2,
-                          height: MediaQuery.of(context).size.height * 0.05,
+                          height: MediaQuery.of(context).size.height * 0.04,
                           child: const Text(
                             "Да",
                             textAlign: TextAlign.center,
@@ -255,7 +282,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
                       children: [
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.5,
-                          height: MediaQuery.of(context).size.height * 0.05,
+                          height: MediaQuery.of(context).size.height * 0.04,
                           child: const Text(
                             "Вакцинация:",
                             style: TextStyle(
@@ -266,7 +293,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
                         ),
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.2,
-                          height: MediaQuery.of(context).size.height * 0.05,
+                          height: MediaQuery.of(context).size.height * 0.04,
                           child: const Text(
                             "Да",
                             textAlign: TextAlign.center,
@@ -283,7 +310,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
                       children: [
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.5,
-                          height: MediaQuery.of(context).size.height * 0.05,
+                          height: MediaQuery.of(context).size.height * 0.04,
                           child: const Text(
                             "Чипирование:",
                             style: TextStyle(
@@ -294,7 +321,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
                         ),
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.2,
-                          height: MediaQuery.of(context).size.height * 0.05,
+                          height: MediaQuery.of(context).size.height * 0.04,
                           child: const Text(
                             "Да",
                             textAlign: TextAlign.center,
@@ -311,7 +338,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
                       children: [
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.5,
-                          height: MediaQuery.of(context).size.height * 0.05,
+                          height: MediaQuery.of(context).size.height * 0.04,
                           child: const Text(
                             "Ветеринарный паспорт:",
                             style: TextStyle(
@@ -322,14 +349,52 @@ class _PetsDataPageState extends State<PetsDataPage> {
                         ),
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.2,
-                          height: MediaQuery.of(context).size.height * 0.05,
+                          height: MediaQuery.of(context).size.height * 0.04,
                           child: const Text(
                             "Да",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontFamily: 'PlayfairDisplay',
-                              fontSize: 12,
+                              fontSize: 15,
                             ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.08,
+                          height: MediaQuery.of(context).size.height * 0.05,
+                          child: IconButton(
+                            icon: const Icon(Icons.replay),
+                            color: const Color.fromARGB(101, 133, 166, 255),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                  builder: (context) => DataPage(
+                                    docFireBase: docs,
+                                    name: docs['name'],
+                                    kind: docs['kind'],
+                                    gender: docs['gender'],
+                                    age: docs['age'],
+                                    description: docs['description'],
+                                    image: docs['image'],
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.15,
+                          height: MediaQuery.of(context).size.height * 0.05,
+                          child: IconButton(
+                            icon: const Icon(Icons.delete),
+                            color: const Color.fromARGB(101, 133, 166, 255),
+                            onPressed: () {},
                           ),
                         ),
                       ],
@@ -342,45 +407,49 @@ class _PetsDataPageState extends State<PetsDataPage> {
         ),
       ),
     );
-    // child: Center(
-    //   child: Column(
-    //     children: [Row(), Row(), Row()],
-    //   ),
-    // ),
-    // return Card(
-    //   shape: RoundedRectangleBorder(
-    //     borderRadius: BorderRadius.circular(10),
-    //   ),
-    //   child: ListTile(
-    //     title: Text(
-    //       docs['name'],
-    //     ),
-    //     subtitle: Text(
-    //       docs['description'],
-    //     ),
-    //     // leading: Image.network(
-    //     //   docs['image'],
-    //     // ),
-    //     trailing: const Icon(Icons.arrow_right),
-    //     tileColor: const Color.fromARGB(200, 229, 242, 255),
-    //     onTap: () {
-    //       Navigator.push(
-    //         context,
-    //         CupertinoPageRoute(
-    //           builder: (context) => DataPage(
-    //             title: "Изменить/Удалить",
-    //             docFireBase: docs,
-    //             name: docs['name'],
-    //             description: docs['description'],
-    //             image: docs['image'],
-    //           ),
-    //         ),
-    //       );
-    //     },
-    //   ),
-    // );
   }
 }
+
+// Widget build(context, docs) {
+//   return Row(
+//     mainAxisAlignment: MainAxisAlignment.end,
+//     children: [
+//       SizedBox(
+//         width: MediaQuery.of(context).size.width * 0.08,
+//         height: MediaQuery.of(context).size.height * 0.05,
+//         child: IconButton(
+//           icon: const Icon(Icons.replay),
+//           color: const Color.fromARGB(101, 133, 166, 255),
+//           onPressed: () {
+//             Navigator.push(
+//               context,
+//               CupertinoPageRoute(
+//                 builder: (context) => DataPage(
+//                   docFireBase: docs,
+//                   name: docs['name'],
+//                   kind: docs['kind'],
+//                   gender: docs['gender'],
+//                   age: docs['age'],
+//                   description: docs['description'],
+//                   image: docs['image'],
+//                 ),
+//               ),
+//             );
+//           },
+//         ),
+//       ),
+//       SizedBox(
+//         width: MediaQuery.of(context).size.width * 0.15,
+//         height: MediaQuery.of(context).size.height * 0.05,
+//         child: IconButton(
+//           icon: const Icon(Icons.delete),
+//           color: const Color.fromARGB(101, 133, 166, 255),
+//           onPressed: () {},
+//         ),
+//       ),
+//     ],
+//   );
+// }
 
 class Pets {
   int? id;

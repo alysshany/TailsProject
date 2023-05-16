@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:tails_app/contacts.dart';
 import 'package:tails_app/drawer.dart';
-import 'package:tails_app/personal.dart';
 import 'package:tails_app/pets_data.dart';
 import 'package:tails_app/stories.dart';
 
@@ -14,11 +13,7 @@ class FirstViewPage extends StatefulWidget {
 }
 
 class _FirstViewPageState extends State<FirstViewPage> {
-  final list = [
-    const PetsDataPage(),
-    const StoriesPage(),
-    const ContactsPage()
-  ];
+  final list = [PetsDataPage(), const StoriesPage(), const ContactsPage()];
 
   int index = 0;
   var _selectedTab = _SelectedTab.home;
@@ -54,19 +49,19 @@ class _FirstViewPageState extends State<FirstViewPage> {
           /// Home
           DotNavigationBarItem(
             icon: const Icon(Icons.home),
-            selectedColor: const Color.fromARGB(199, 123, 189, 255),
+            selectedColor: const Color.fromARGB(101, 133, 166, 255),
           ),
 
           /// Likes
           DotNavigationBarItem(
             icon: const Icon(Icons.favorite_border),
-            selectedColor: const Color.fromARGB(199, 123, 189, 255),
+            selectedColor: const Color.fromARGB(101, 133, 166, 255),
           ),
 
           /// Profile
           DotNavigationBarItem(
             icon: const Icon(Icons.person),
-            selectedColor: const Color.fromARGB(199, 123, 189, 255),
+            selectedColor: const Color.fromARGB(101, 133, 166, 255),
           ),
         ],
       ),

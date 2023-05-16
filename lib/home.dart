@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
             width: MediaQuery.of(context).size.height * 0.40,
             alignment: Alignment.topCenter,
             child: const Text(
-              "А знаете ли вы, как приятно просыпаться не оттого, что тишину пронзительно взрывает будильник, а оттого, что кошка мурлыкает над ухом, поет свою кошачью песенку...",
+              "А знаете ли вы, как приятно просыпаться не от того, что тишину пронзительно взрывает будильник, а от того, что кошка мурлыкает над ухом, поет свою кошачью песенку...",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'PlayfairDisplay',

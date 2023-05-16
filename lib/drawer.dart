@@ -17,19 +17,23 @@ class _MenuDrawerState extends State<MenuDrawer> {
         .collection("admins")
         .doc(FirebaseAuth.instance.currentUser!.email.toString())
         .snapshots()
-        .listen((datasnapshot) {
-      //FINDING A SPECIFICDOCUMENT IS EXISTING INSIDE A COLLECTION
-
-      if (datasnapshot.exists) {
-        setState(() {
-          widget.active = true;
-        });
-      } else if (!datasnapshot.exists) {
-        setState(() {
-          widget.active = false;
-        });
-      }
-    });
+        .listen(
+      (datasnapshot) {
+        if (datasnapshot.exists) {
+          setState(
+            () {
+              widget.active = true;
+            },
+          );
+        } else if (!datasnapshot.exists) {
+          setState(
+            () {
+              widget.active = false;
+            },
+          );
+        }
+      },
+    );
   }
 
   @override
@@ -46,20 +50,28 @@ class _MenuDrawerState extends State<MenuDrawer> {
         // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: [
-          DrawerHeader(
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 231, 243, 255),
-            ),
-            child: UserAccountsDrawerHeader(
-              accountName: Text(email),
-              accountEmail: const Text("Tails"),
-              otherAccountsPictures: [
-                IconButton(
-                    onPressed: () => {
-                          AuthServices().logOut(),
-                        },
-                    icon: const Icon(Icons.exit_to_app))
-              ],
+          SizedBox(
+            height: 180,
+            child: DrawerHeader(
+              decoration: const BoxDecoration(
+                color: const Color.fromARGB(255, 231, 243, 255),
+              ),
+              child: UserAccountsDrawerHeader(
+                accountName: Text(email),
+                accountEmail: const Text("Tails"),
+                decoration: BoxDecoration(
+                    color: const Color.fromARGB(101, 133, 166, 255),
+                    borderRadius: BorderRadius.circular(15)),
+                otherAccountsPictures: [
+                  IconButton(
+                    icon: const Icon(Icons.exit_to_app),
+                    color: Colors.white,
+                    onPressed: () {
+                      AuthServices().logOut();
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
           ListTile(
@@ -78,7 +90,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
           ListTile(
             leading: const Icon(
-              Icons.train,
+              Icons.pets,
             ),
             title: const Text(
               "Добавить питомца",
