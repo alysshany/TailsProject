@@ -21,15 +21,18 @@ class _PickUpPageState extends State<PickUpPage> {
         ),
       ),
       body: Column(
-        children: <Widget> [
+        children: <Widget>[
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.30,
           ),
           const Center(
             child: Text(
-            "Как забрать питомца домой?",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 24),
+              "Как забрать питомца домой?",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'PlayfairDisplay',
+                fontSize: 24,
+              ),
             ),
           ),
           SizedBox(
@@ -37,7 +40,7 @@ class _PickUpPageState extends State<PickUpPage> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget> [
+            children: <Widget>[
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.14,
                 width: MediaQuery.of(context).size.width * 0.30,
@@ -53,12 +56,18 @@ class _PickUpPageState extends State<PickUpPage> {
                       Text(
                         "1.",
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 14),
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                          fontSize: 14,
+                        ),
                       ),
                       Text(
                         "Выберите питомца",
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 14),
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                          fontSize: 14,
+                        ),
                       ),
                     ],
                   ),
@@ -79,12 +88,18 @@ class _PickUpPageState extends State<PickUpPage> {
                       Text(
                         "2.",
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 14),
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                          fontSize: 14,
+                        ),
                       ),
                       Text(
-                        "Оформите заявку",
+                        "Свяжитесь с куратором",
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 14),
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                          fontSize: 14,
+                        ),
                       ),
                     ],
                   ),
@@ -105,12 +120,18 @@ class _PickUpPageState extends State<PickUpPage> {
                       Text(
                         "3.",
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 14),
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                          fontSize: 14,
+                        ),
                       ),
                       Text(
-                        "Свяжитесь с куратором",
+                        "Оформите заявку",
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 14),
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                          fontSize: 14,
+                        ),
                       ),
                     ],
                   ),
@@ -123,7 +144,7 @@ class _PickUpPageState extends State<PickUpPage> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget> [
+            children: <Widget>[
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.14,
                 width: MediaQuery.of(context).size.width * 0.30,
@@ -139,12 +160,18 @@ class _PickUpPageState extends State<PickUpPage> {
                       Text(
                         "4.",
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 14),
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                          fontSize: 14,
+                        ),
                       ),
                       Text(
                         "Пройдите собеседование",
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 14),
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                          fontSize: 14,
+                        ),
                       ),
                     ],
                   ),
@@ -165,12 +192,18 @@ class _PickUpPageState extends State<PickUpPage> {
                       Text(
                         "5.",
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 14),
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                          fontSize: 14,
+                        ),
                       ),
                       Text(
                         "Заберите питомца",
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 14),
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                          fontSize: 14,
+                        ),
                       ),
                     ],
                   ),
@@ -178,8 +211,8 @@ class _PickUpPageState extends State<PickUpPage> {
               ),
             ],
           ),
-        ]
-      )
+        ],
+      ),
     );
   }
 }

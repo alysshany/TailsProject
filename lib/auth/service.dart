@@ -34,10 +34,4 @@ class AuthServices {
     return _firebaseAuth.authStateChanges().map(
         (User? user) => user != null ? UserModel.fromFirebase(user) : null);
   }
-
-  // String currentUserLogin(Stream<UserModel?> currentUser) {
-  //   // return currentUser != null ? UserModel.fromFirebase(currentUser).login.toString() : "null";
-  //   return (UserModel(currentUser['id'], currentUser['email']).login ?? "");
-  //   //return currentUser["id"].toString();
-  // }
 }

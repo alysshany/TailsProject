@@ -42,10 +42,14 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
               ),
             ),
             const Center(
-                child: Text(
-              "О проекте",
-              style: TextStyle(fontFamily: 'PlayfairDisplay', color: Colors.black, fontSize: 22),
-            )),
+              child: Text(
+                "О проекте",
+                style: TextStyle(
+                    fontFamily: 'PlayfairDisplay',
+                    color: Colors.black,
+                    fontSize: 22),
+              ),
+            ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
             ),
@@ -54,7 +58,10 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
               alignment: Alignment.center,
               child: const Text(
                 "Миссия проекта - формирование культуры ответственного отношения к домашним животным. Решение взять кошку или собаку из приюта должно быть осознанным.",
-                style: TextStyle(fontFamily: 'PlayfairDisplay', color: Colors.black, fontSize: 16),
+                style: TextStyle(
+                    fontFamily: 'PlayfairDisplay',
+                    color: Colors.black,
+                    fontSize: 16),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -94,7 +101,10 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
             const Center(
                 child: Text(
               "Расскажи о нас друзьям!",
-              style: TextStyle(fontFamily: 'PlayfairDisplay', color: Colors.black, fontSize: 22),
+              style: TextStyle(
+                  fontFamily: 'PlayfairDisplay',
+                  color: Colors.black,
+                  fontSize: 22),
             )),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
@@ -104,7 +114,10 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
               alignment: Alignment.center,
               child: const Text(
                 "Информационная поддержка и участие в мероприятиях помогут кошкам и собакам из приютов встретить своего человека. Узнайте, в активностях какого приюта вы можете принять участие!",
-                style: TextStyle(fontFamily: 'PlayfairDisplay', color: Colors.black, fontSize: 16),
+                style: TextStyle(
+                    fontFamily: 'PlayfairDisplay',
+                    color: Colors.black,
+                    fontSize: 16),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -142,10 +155,14 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
               ),
             ),
             const Center(
-                child: Text(
-              "Приезжай в гости!",
-              style: TextStyle(fontFamily: 'PlayfairDisplay', color: Colors.black, fontSize: 22),
-            )),
+              child: Text(
+                "Приезжай в гости!",
+                style: TextStyle(
+                    fontFamily: 'PlayfairDisplay',
+                    color: Colors.black,
+                    fontSize: 22),
+              ),
+            ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
             ),
@@ -154,7 +171,10 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
               alignment: Alignment.center,
               child: const Text(
                 "Собакам и кошкам очень важно общение с человеком – социальные навыки помогут им быстрее найти хозяина. Приезжайте поиграть, погулять и просто погладить питомцев!",
-                style: TextStyle(fontFamily: 'PlayfairDisplay', color: Colors.black, fontSize: 16),
+                style: TextStyle(
+                    fontFamily: 'PlayfairDisplay',
+                    color: Colors.black,
+                    fontSize: 16),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -188,10 +208,14 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
               ),
             ),
             const Center(
-                child: Text(
-              "Будь другом, подари!",
-              style: TextStyle(fontFamily: 'PlayfairDisplay', color: Colors.black, fontSize: 22),
-            )),
+              child: Text(
+                "Будь другом, подари!",
+                style: TextStyle(
+                    fontFamily: 'PlayfairDisplay',
+                    color: Colors.black,
+                    fontSize: 22),
+              ),
+            ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
             ),
@@ -200,7 +224,10 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
               alignment: Alignment.center,
               child: const Text(
                 "Игрушки, одноразовые пеленки, медикаменты, корма, моющие средства и многое другое нужно животным каждый день. Узнайте, чего не хватает питомцам в ближайшем к вам приюте!",
-                style: TextStyle(fontFamily: 'PlayfairDisplay', color: Colors.black, fontSize: 16),
+                style: TextStyle(
+                    fontFamily: 'PlayfairDisplay',
+                    color: Colors.black,
+                    fontSize: 16),
                 textAlign: TextAlign.center,
               ),
             ),

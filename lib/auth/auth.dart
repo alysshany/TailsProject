@@ -1,9 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:tails_app/auth/model.dart';
 import 'package:tails_app/auth/service.dart';
-// import 'package:tails_app/auth/model.dart';
-// import 'package:tails_app/auth/service.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
@@ -28,15 +25,6 @@ class _AuthPageState extends State<AuthPage> {
   signUp() async {
     UserModel? user = await authServices.signUp(
         emailController.text, passwordController.text);
-
-    // CollectionReference users = FirebaseFirestore.instance.collection("users");
-
-    // await users.add(
-    //   {
-    //     'login': emailController.text,
-    //     'role': "client"
-    //   }
-    // );
     return user;
   }
 
@@ -158,8 +146,6 @@ class _AuthPageState extends State<AuthPage> {
                   ),
                   onPressed: () {
                     isSign ? signUp() : signIn();
-                    //Navigator.pushNamed(context, '/stories');
-                    //Navigator.pushNamed(context, '/data');
                   },
                   child: isSign
                       ? const Text(

@@ -12,27 +12,34 @@ class MenuDrawer extends StatefulWidget {
 }
 
 class _MenuDrawerState extends State<MenuDrawer> {
-  getUser()
-  {
-    var user = FirebaseFirestore.instance.collection("admins").doc(FirebaseAuth.instance.currentUser!.email.toString()).snapshots().listen((datasnapshot) {
+  getUser() {
+    var user = FirebaseFirestore.instance
+        .collection("admins")
+        .doc(FirebaseAuth.instance.currentUser!.email.toString())
+        .snapshots()
+        .listen((datasnapshot) {
       //FINDING A SPECIFICDOCUMENT IS EXISTING INSIDE A COLLECTION
 
-    if (datasnapshot.exists) {
-      setState(() {
-        widget.active = true;
-      });
-    } else if (!datasnapshot.exists) {
-      setState(() {
-        widget.active = false;
-      });
-    }
-  });
+      if (datasnapshot.exists) {
+        setState(() {
+          widget.active = true;
+        });
+      } else if (!datasnapshot.exists) {
+        setState(() {
+          widget.active = false;
+        });
+      }
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     String email = FirebaseAuth.instance.currentUser!.email.toString();
-    final user = FirebaseFirestore.instance.collection("admins").doc(email).snapshots().toString();
+    final user = FirebaseFirestore.instance
+        .collection("admins")
+        .doc(email)
+        .snapshots()
+        .toString();
     // getRole(email);
     return Drawer(
       child: ListView(
@@ -69,38 +76,52 @@ class _MenuDrawerState extends State<MenuDrawer> {
               Navigator.pushNamed(context, '/projectInfo');
             },
           ),
+          ListTile(
+            leading: const Icon(
+              Icons.train,
+            ),
+            title: const Text(
+              "Добавить питомца",
+              style: TextStyle(
+                fontFamily: 'PlayfairDisplay',
+              ),
+            ),
+            onTap: () {
+              Navigator.pushNamed(context, '/data');
+            },
+          ),
           FutureBuilder(
             future: getUser(),
             builder: (context, snapshot) {
               return widget.active == true
-              ?  ListTile(
-                  leading: const Icon(
-                    Icons.train,
-                  ),
-                  title: const Text(
-                    "Добавить питомца",
-                    style: TextStyle(
-                      fontFamily: 'PlayfairDisplay',
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.pushNamed(context, '/data');
-                  },
-                )
-              : ListTile(
-                  leading: const Icon(
-                    Icons.train,
-                  ),
-                  title: const Text(
-                    'Забрать питомца',
-                    style: TextStyle(
-                      fontFamily: 'PlayfairDisplay',
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.pushNamed(context, '/pickPet');
-                  },
-                );
+                  ? ListTile(
+                      leading: const Icon(
+                        Icons.pets,
+                      ),
+                      title: const Text(
+                        "Добавить питомца",
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(context, '/data');
+                      },
+                    )
+                  : ListTile(
+                      leading: const Icon(
+                        Icons.pets,
+                      ),
+                      title: const Text(
+                        'Как забрать питомца',
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(context, '/pickPet');
+                      },
+                    );
             },
           ),
         ],

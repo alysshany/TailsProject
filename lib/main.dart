@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:tails_app/auth/service.dart';
+import 'package:tails_app/contacts.dart';
 import 'package:tails_app/data.dart';
 import 'package:tails_app/first.dart';
 import 'package:tails_app/home.dart';
@@ -39,8 +40,9 @@ class MyApp extends StatelessWidget {
           '/pickPet': (context) => const PickUpPage(),
           '/projectInfo': (context) => const AboutProjectPage(),
           '/firstView': (context) => const FirstViewPage(),
-          '/petsView': (context) => PetsViewPage(),
-          '/personal': (context) => const PersonalPage()
+          '/petsView': (context) => const PetsViewPage(),
+          '/personal': (context) => const PersonalPage(),
+          '/contacts': (context) => const ContactsPage()
         },
         home: AnimatedSplashScreen(
           duration: 3000,
@@ -48,7 +50,7 @@ class MyApp extends StatelessWidget {
           nextScreen: const HomePage(),
           splashTransition: SplashTransition.sizeTransition,
           pageTransitionType: PageTransitionType.leftToRight,
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         ),
         // theme: ThemeData(
         //   scaffoldBackgroundColor: const Color.fromARGB(200, 229, 242, 255),

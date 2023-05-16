@@ -43,7 +43,9 @@ class _HomePageState extends State<HomePage> {
             child: const Text(
               "А знаете ли вы, как приятно просыпаться не оттого, что тишину пронзительно взрывает будильник, а оттого, что кошка мурлыкает над ухом, поет свою кошачью песенку...",
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'PlayfairDisplay'),
+              style: TextStyle(
+                fontFamily: 'PlayfairDisplay',
+              ),
             ),
           ),
         ],

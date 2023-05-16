@@ -1,16 +1,10 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
-import 'package:tails_app/auth/auth.dart';
-import 'package:tails_app/auth/service.dart';
-import 'package:tails_app/data.dart';
+import 'package:tails_app/contacts.dart';
 import 'package:tails_app/drawer.dart';
 import 'package:tails_app/personal.dart';
 import 'package:tails_app/pets_data.dart';
-import 'package:tails_app/pets_view.dart';
 import 'package:tails_app/stories.dart';
-
 
 class FirstViewPage extends StatefulWidget {
   const FirstViewPage({super.key});
@@ -20,23 +14,26 @@ class FirstViewPage extends StatefulWidget {
 }
 
 class _FirstViewPageState extends State<FirstViewPage> {
-  final list = [const PetsDataPage(), const StoriesPage(), const PersonalPage()];
-  
-
+  final list = [
+    const PetsDataPage(),
+    const StoriesPage(),
+    const ContactsPage()
+  ];
 
   int index = 0;
   var _selectedTab = _SelectedTab.home;
 
   void _handleIndexChanged(int i) {
-    setState(() {
-      index = i;
-      _selectedTab = _SelectedTab.values[i];
-    });
+    setState(
+      () {
+        index = i;
+        _selectedTab = _SelectedTab.values[i];
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(

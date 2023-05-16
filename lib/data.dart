@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:tails_app/pets_data.dart';
-//import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DataPage extends StatefulWidget {
   dynamic docFireBase;
@@ -82,7 +81,7 @@ class _DataPageState extends State<DataPage> {
                 ),
                 child: IconButton(
                   icon: const Icon(Icons.add),
-                  color: Color.fromARGB(100, 0, 0, 0),
+                  color: const Color.fromARGB(100, 0, 0, 0),
                   onPressed: () async {
                     pets.name = nameController.text;
                     pets.kind = kindController.text;
@@ -125,7 +124,7 @@ class _DataPageState extends State<DataPage> {
                 ),
                 child: IconButton(
                   icon: const Icon(Icons.update),
-                  color: Color.fromARGB(100, 0, 0, 0),
+                  color: const Color.fromARGB(100, 0, 0, 0),
                   onPressed: () async {
                     CollectionReference petsRef =
                         FirebaseFirestore.instance.collection('pets');
@@ -162,7 +161,7 @@ class _DataPageState extends State<DataPage> {
                 ),
                 child: IconButton(
                   icon: const Icon(Icons.delete),
-                  color: Color.fromARGB(100, 0, 0, 0),
+                  color: const Color.fromARGB(100, 0, 0, 0),
                   onPressed: () async {
                     CollectionReference petsRef =
                         FirebaseFirestore.instance.collection('pets');
@@ -190,37 +189,6 @@ class _DataPageState extends State<DataPage> {
           ),
         ],
       ),
-      // appBar: AppBar(
-      //   title: const Text("widget.title!"),
-      //   backgroundColor: const Color.fromARGB(101, 133, 166, 255),
-      //   foregroundColor: const Color.fromARGB(200, 229, 242, 255),
-      //   centerTitle: true,
-      //   //automaticallyImplyLeading: false,
-      // ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   backgroundColor: const Color.fromARGB(200, 229, 242, 255),
-      //   selectedItemColor: const Color.fromARGB(101, 133, 166, 255),
-      //   unselectedItemColor: const Color.fromARGB(101, 133, 166, 255),
-      //   items: const [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.add),
-      //       label: 'Добавить',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.update),
-      //       label: 'Обновить',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.delete),
-      //       label: 'Удалить',
-      //     ),
-      //   ],
-      //   onTap: (value) {
-      //     setState(
-      //       () {},
-      //     );
-      //   },
-      // ),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         elevation: 0,
@@ -246,23 +214,25 @@ class _DataPageState extends State<DataPage> {
                   elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Имя",
-                          style: TextStyle(
-                            fontFamily: 'PlayfairDisplay',
-                          )),
+                      label: const Text(
+                        "Имя",
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                        ),
+                      ),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: const Color.fromARGB(255, 231, 243, 255),
+                          color: Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: const Color.fromARGB(255, 231, 243, 255),
+                          color: Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                     ),
@@ -288,13 +258,13 @@ class _DataPageState extends State<DataPage> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: const Color.fromARGB(255, 231, 243, 255),
+                          color: Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: const Color.fromARGB(255, 231, 243, 255),
+                          color: Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                     ),
@@ -310,23 +280,25 @@ class _DataPageState extends State<DataPage> {
                   elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Пол",
-                          style: TextStyle(
-                            fontFamily: 'PlayfairDisplay',
-                          )),
+                      label: const Text(
+                        "Пол",
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                        ),
+                      ),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: const Color.fromARGB(255, 231, 243, 255),
+                          color: Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: const Color.fromARGB(255, 231, 243, 255),
+                          color: Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                     ),
@@ -342,23 +314,25 @@ class _DataPageState extends State<DataPage> {
                   elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Возраст",
-                          style: TextStyle(
-                            fontFamily: 'PlayfairDisplay',
-                          )),
+                      label: const Text(
+                        "Возраст",
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                        ),
+                      ),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: const Color.fromARGB(255, 231, 243, 255),
+                          color: Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: const Color.fromARGB(255, 231, 243, 255),
+                          color: Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                     ),
@@ -374,23 +348,25 @@ class _DataPageState extends State<DataPage> {
                   elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Описание",
-                          style: TextStyle(
-                            fontFamily: 'PlayfairDisplay',
-                          )),
+                      label: const Text(
+                        "Описание",
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                        ),
+                      ),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: const Color.fromARGB(255, 231, 243, 255),
+                          color: Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: const Color.fromARGB(255, 231, 243, 255),
+                          color: Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                     ),
@@ -406,23 +382,25 @@ class _DataPageState extends State<DataPage> {
                   elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Фото",
-                          style: TextStyle(
-                            fontFamily: 'PlayfairDisplay',
-                          )),
+                      label: const Text(
+                        "Фото",
+                        style: TextStyle(
+                          fontFamily: 'PlayfairDisplay',
+                        ),
+                      ),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: const Color.fromARGB(255, 231, 243, 255),
+                          color: Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: const BorderSide(
-                          color: const Color.fromARGB(255, 231, 243, 255),
+                          color: Color.fromARGB(255, 231, 243, 255),
                         ),
                       ),
                     ),

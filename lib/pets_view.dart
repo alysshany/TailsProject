@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flip_card/flip_card.dart';
-import 'package:tails_app/pets_data.dart';
 
 class PetsViewPage extends StatefulWidget {
   const PetsViewPage({super.key});
@@ -88,12 +87,13 @@ class _PetsViewPageState extends State<PetsViewPage> {
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
-                                          children: [
-                                            Text("Имя",
-                                                style: TextStyle(
-                                                    fontFamily:
-                                                        'PlayfairDisplay',
-                                                    fontSize: 20))
+                                          children: const [
+                                            Text(
+                                              "Имя",
+                                              style: TextStyle(
+                                                  fontFamily: 'PlayfairDisplay',
+                                                  fontSize: 20),
+                                            )
                                           ],
                                         ),
                                       ),
@@ -104,7 +104,7 @@ class _PetsViewPageState extends State<PetsViewPage> {
                                         width:
                                             MediaQuery.of(context).size.width *
                                                 0.48,
-                                        child: Text(
+                                        child: const Text(
                                           "Описание",
                                           style: TextStyle(
                                               fontFamily: 'PlayfairDisplay',
@@ -129,19 +129,19 @@ class _PetsViewPageState extends State<PetsViewPage> {
                                                       .width *
                                                   0.15,
                                               child: Card(
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
-                                                  ),
-                                                  child: Text(
-                                                    "Кот",
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'PlayfairDisplay',
-                                                        fontSize: 14),
-                                                    textAlign: TextAlign.center,
-                                                  )),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                ),
+                                                child: const Text(
+                                                  "Кот",
+                                                  style: TextStyle(
+                                                      fontFamily:
+                                                          'PlayfairDisplay',
+                                                      fontSize: 14),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
                                             ),
                                             SizedBox(
                                               width: MediaQuery.of(context)
@@ -149,19 +149,19 @@ class _PetsViewPageState extends State<PetsViewPage> {
                                                       .width *
                                                   0.18,
                                               child: Card(
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
-                                                  ),
-                                                  child: Text(
-                                                    "Мальчик",
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'PlayfairDisplay',
-                                                        fontSize: 14),
-                                                    textAlign: TextAlign.center,
-                                                  )),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                ),
+                                                child: const Text(
+                                                  "Мальчик",
+                                                  style: TextStyle(
+                                                      fontFamily:
+                                                          'PlayfairDisplay',
+                                                      fontSize: 14),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
                                             ),
                                             SizedBox(
                                               width: MediaQuery.of(context)
@@ -169,19 +169,19 @@ class _PetsViewPageState extends State<PetsViewPage> {
                                                       .width *
                                                   0.15,
                                               child: Card(
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
-                                                  ),
-                                                  child: Text(
-                                                    "3 года",
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'PlayfairDisplay',
-                                                        fontSize: 14),
-                                                    textAlign: TextAlign.center,
-                                                  )),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                ),
+                                                child: const Text(
+                                                  "3 года",
+                                                  style: TextStyle(
+                                                      fontFamily:
+                                                          'PlayfairDisplay',
+                                                      fontSize: 14),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
                                             )
                                           ],
                                         ),

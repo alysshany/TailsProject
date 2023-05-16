@@ -10,8 +10,9 @@ class UserModel {
   }
 
   UserModel(String? id, String? login) {
+    // ignore: prefer_initializing_formals
     this.id = id;
+    // ignore: prefer_initializing_formals
     this.login = login;
   }
-
 }
