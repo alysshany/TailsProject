@@ -39,6 +39,103 @@ class _PetsDataPageState extends State<PetsDataPage> {
   }
 
   @override
+  Widget editing(context, docs) {
+    return FutureBuilder(
+        future: getUser(),
+        builder: (context, snapshot) {
+          return widget.active == true
+              ? Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.08,
+                      height: MediaQuery.of(context).size.height * 0.05,
+                      child: IconButton(
+                        icon: const Icon(Icons.replay),
+                        color: const Color.fromARGB(101, 133, 166, 255),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => DataPage(
+                                docFireBase: docs,
+                                name: docs['name'],
+                                kind: docs['kind'],
+                                gender: docs['gender'],
+                                age: docs['age'],
+                                description: docs['description'],
+                                image: docs['image'],
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.15,
+                      height: MediaQuery.of(context).size.height * 0.05,
+                      // child: IconButton(
+                      //   icon: const Icon(Icons.delete),
+                      //   color: const Color.fromARGB(101, 133, 166, 255),
+                      //   onPressed: () {
+                      //     CollectionReference petsRef =
+                      //         FirebaseFirestore.instance.collection('pets');
+                      //     petsRef.doc(docs.toString()).delete();
+                      //   },
+                      // ),
+                      child: Text(docs["name"]),
+                    ),
+                  ],
+                )
+              : Row();
+        });
+    //   if (widget.active == true)
+    //   {
+    //     return Row(
+    //     mainAxisAlignment: MainAxisAlignment.end,
+    //     children: [
+    //       SizedBox(
+    //         width: MediaQuery.of(context).size.width * 0.08,
+    //         height: MediaQuery.of(context).size.height * 0.05,
+    //         child: IconButton(
+    //           icon: const Icon(Icons.replay),
+    //           color: const Color.fromARGB(101, 133, 166, 255),
+    //           onPressed: () {
+    //             Navigator.push(
+    //               context,
+    //               CupertinoPageRoute(
+    //                 builder: (context) => DataPage(
+    //                   docFireBase: docs,
+    //                   name: docs['name'],
+    //                   kind: docs['kind'],
+    //                   gender: docs['gender'],
+    //                   age: docs['age'],
+    //                   description: docs['description'],
+    //                   image: docs['image'],
+    //                 ),
+    //               ),
+    //             );
+    //           },
+    //         ),
+    //       ),
+    //       SizedBox(
+    //         width: MediaQuery.of(context).size.width * 0.15,
+    //         height: MediaQuery.of(context).size.height * 0.05,
+    //         child: IconButton(
+    //           icon: const Icon(Icons.delete),
+    //           color: const Color.fromARGB(101, 133, 166, 255),
+    //           onPressed: () {},
+    //         ),
+    //       ),
+    //     ],
+    //   );
+    // }
+    // else {
+    //   return Row( );
+    // }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return StreamBuilder(
       stream: FirebaseFirestore.instance.collection("pets").snapshots(),
@@ -364,39 +461,40 @@ class _PetsDataPageState extends State<PetsDataPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.08,
-                          height: MediaQuery.of(context).size.height * 0.05,
-                          child: IconButton(
-                            icon: const Icon(Icons.replay),
-                            color: const Color.fromARGB(101, 133, 166, 255),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                CupertinoPageRoute(
-                                  builder: (context) => DataPage(
-                                    docFireBase: docs,
-                                    name: docs['name'],
-                                    kind: docs['kind'],
-                                    gender: docs['gender'],
-                                    age: docs['age'],
-                                    description: docs['description'],
-                                    image: docs['image'],
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.15,
-                          height: MediaQuery.of(context).size.height * 0.05,
-                          child: IconButton(
-                            icon: const Icon(Icons.delete),
-                            color: const Color.fromARGB(101, 133, 166, 255),
-                            onPressed: () {},
-                          ),
-                        ),
+                        editing(context, docs)
+                        // SizedBox(
+                        //   width: MediaQuery.of(context).size.width * 0.08,
+                        //   height: MediaQuery.of(context).size.height * 0.05,
+                        //   child: IconButton(
+                        //     icon: const Icon(Icons.replay),
+                        //     color: const Color.fromARGB(101, 133, 166, 255),
+                        //     onPressed: () {
+                        //       Navigator.push(
+                        //         context,
+                        //         CupertinoPageRoute(
+                        //           builder: (context) => DataPage(
+                        //             docFireBase: docs,
+                        //             name: docs['name'],
+                        //             kind: docs['kind'],
+                        //             gender: docs['gender'],
+                        //             age: docs['age'],
+                        //             description: docs['description'],
+                        //             image: docs['image'],
+                        //           ),
+                        //         ),
+                        //       );
+                        //     },
+                        //   ),
+                        // ),
+                        // SizedBox(
+                        //   width: MediaQuery.of(context).size.width * 0.15,
+                        //   height: MediaQuery.of(context).size.height * 0.05,
+                        //   child: IconButton(
+                        //     icon: const Icon(Icons.delete),
+                        //     color: const Color.fromARGB(101, 133, 166, 255),
+                        //     onPressed: () {},
+                        //   ),
+                        // ),
                       ],
                     ),
                   ],
@@ -410,53 +508,12 @@ class _PetsDataPageState extends State<PetsDataPage> {
   }
 }
 
-// Widget build(context, docs) {
-//   return Row(
-//     mainAxisAlignment: MainAxisAlignment.end,
-//     children: [
-//       SizedBox(
-//         width: MediaQuery.of(context).size.width * 0.08,
-//         height: MediaQuery.of(context).size.height * 0.05,
-//         child: IconButton(
-//           icon: const Icon(Icons.replay),
-//           color: const Color.fromARGB(101, 133, 166, 255),
-//           onPressed: () {
-//             Navigator.push(
-//               context,
-//               CupertinoPageRoute(
-//                 builder: (context) => DataPage(
-//                   docFireBase: docs,
-//                   name: docs['name'],
-//                   kind: docs['kind'],
-//                   gender: docs['gender'],
-//                   age: docs['age'],
-//                   description: docs['description'],
-//                   image: docs['image'],
-//                 ),
-//               ),
-//             );
-//           },
-//         ),
-//       ),
-//       SizedBox(
-//         width: MediaQuery.of(context).size.width * 0.15,
-//         height: MediaQuery.of(context).size.height * 0.05,
-//         child: IconButton(
-//           icon: const Icon(Icons.delete),
-//           color: const Color.fromARGB(101, 133, 166, 255),
-//           onPressed: () {},
-//         ),
-//       ),
-//     ],
-//   );
-// }
-
 class Pets {
   int? id;
   String? name;
   String? kind;
   String? gender;
-  int? age;
+  String? age;
   String? description;
   String? image;
   Pets({

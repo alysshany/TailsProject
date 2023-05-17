@@ -12,6 +12,7 @@ class MenuDrawer extends StatefulWidget {
 }
 
 class _MenuDrawerState extends State<MenuDrawer> {
+  @override
   getUser() {
     var user = FirebaseFirestore.instance
         .collection("admins")
