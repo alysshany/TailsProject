@@ -22,12 +22,14 @@ class _PetsDataPageState extends State<PetsDataPage> {
         .listen(
       (datasnapshot) {
         if (datasnapshot.exists) {
+          if (!mounted) return;
           setState(
             () {
               widget.active = true;
             },
           );
         } else if (!datasnapshot.exists) {
+          if (!mounted) return;
           setState(
             () {
               widget.active = false;
@@ -65,6 +67,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
                                 age: docs['age'],
                                 description: docs['description'],
                                 image: docs['image'],
+                                whatToDo: "Изменить",
                               ),
                             ),
                           );
@@ -74,16 +77,16 @@ class _PetsDataPageState extends State<PetsDataPage> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.15,
                       height: MediaQuery.of(context).size.height * 0.05,
-                      // child: IconButton(
-                      //   icon: const Icon(Icons.delete),
-                      //   color: const Color.fromARGB(101, 133, 166, 255),
-                      //   onPressed: () {
-                      //     CollectionReference petsRef =
-                      //         FirebaseFirestore.instance.collection('pets');
-                      //     petsRef.doc(docs.toString()).delete();
-                      //   },
-                      // ),
-                      child: Text(docs["name"]),
+                      child: IconButton(
+                        icon: const Icon(Icons.delete),
+                        color: const Color.fromARGB(101, 133, 166, 255),
+                        onPressed: () {
+                          CollectionReference petsRef =
+                              FirebaseFirestore.instance.collection('pets');
+                          petsRef.doc(docs.id.toString()).delete();
+                        },
+                      ),
+                      //child: Text(docs.id.toString()),
                     ),
                   ],
                 )
@@ -510,6 +513,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
 
 class Pets {
   int? id;
+  dynamic documentFirebase;
   String? name;
   String? kind;
   String? gender;

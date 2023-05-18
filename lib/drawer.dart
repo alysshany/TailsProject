@@ -21,12 +21,14 @@ class _MenuDrawerState extends State<MenuDrawer> {
         .listen(
       (datasnapshot) {
         if (datasnapshot.exists) {
+          if (!mounted) return;
           setState(
             () {
               widget.active = true;
             },
           );
         } else if (!datasnapshot.exists) {
+          if (!mounted) return;
           setState(
             () {
               widget.active = false;

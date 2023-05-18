@@ -1,6 +1,11 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:file_picker/file_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
+//import 'package:image_picker/image_picker.dart';
 import 'package:tails_app/pets_data.dart';
 
 class DataPage extends StatefulWidget {
@@ -12,6 +17,7 @@ class DataPage extends StatefulWidget {
   String? age;
   String? description;
   String? image;
+  String? whatToDo;
 
   DataPage(
       {Key? key,
@@ -22,7 +28,8 @@ class DataPage extends StatefulWidget {
       this.gender,
       this.age,
       this.description,
-      this.image})
+      this.image,
+      this.whatToDo})
       : super(key: key);
 
   @override
@@ -37,6 +44,27 @@ class _DataPageState extends State<DataPage> {
   TextEditingController descriptionController = TextEditingController();
   TextEditingController imageController = TextEditingController();
   Pets pets = Pets();
+
+  // Future selectFile() async {
+  //   final result = (await FilePicker.platform.pickFiles())?.files.first;
+  //   final path = 'files/${result!.name}';
+  //   final file = File(result!.path!);
+
+  //   final ref = FirebaseStorage.instance.ref().child(path);
+  //   var uploadTask = ref.putFile(file);
+
+  //   final snapshot = await uploadTask!.whenComplete(() {});
+
+  //   final urlDownload = await snapshot.ref.getDownloadURL();
+  // }
+
+  // Future<void> _pickImage(ImageSource source) async {
+  //   final pickedFile = await ImagePicker().pickImage(source: source);
+
+  //   if (pickedFile != null) {
+  //     // Do something with the image file.
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -80,49 +108,6 @@ class _DataPageState extends State<DataPage> {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: IconButton(
-                  icon: const Icon(Icons.add),
-                  color: const Color.fromARGB(100, 0, 0, 0),
-                  onPressed: () async {
-                    pets.name = nameController.text;
-                    pets.kind = kindController.text;
-                    pets.gender = genderController.text;
-                    pets.age = ageController.text;
-                    pets.description = descriptionController.text;
-                    pets.image = imageController.text;
-                    CollectionReference petsRef =
-                        FirebaseFirestore.instance.collection('pets');
-                    await petsRef.add(
-                      {
-                        'name': pets.name,
-                        'kind': pets.kind,
-                        'gender': pets.gender,
-                        'age': pets.age,
-                        'description': pets.description,
-                        'image': pets.image,
-                      },
-                    );
-                    nameController.clear();
-                    kindController.clear();
-                    genderController.clear();
-                    ageController.clear();
-                    descriptionController.clear();
-                    imageController.clear();
-                    Navigator.pop(context);
-                  },
-                ),
-              ),
-            ),
-          ),
-          FloatingNavbarItem(
-            customWidget: SizedBox(
-              width: MediaQuery.of(context).size.width * 0.20,
-              height: MediaQuery.of(context).size.width * 0.18,
-              child: Card(
-                color: const Color.fromARGB(200, 229, 242, 255),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: IconButton(
                   icon: const Icon(Icons.update),
                   color: const Color.fromARGB(100, 0, 0, 0),
                   onPressed: () async {
@@ -150,43 +135,124 @@ class _DataPageState extends State<DataPage> {
               ),
             ),
           ),
-          FloatingNavbarItem(
-            customWidget: SizedBox(
-              width: MediaQuery.of(context).size.width * 0.20,
-              height: MediaQuery.of(context).size.width * 0.18,
-              child: Card(
-                color: const Color.fromARGB(200, 229, 242, 255),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: IconButton(
-                  icon: const Icon(Icons.delete),
-                  color: const Color.fromARGB(100, 0, 0, 0),
-                  onPressed: () async {
-                    CollectionReference petsRef =
-                        FirebaseFirestore.instance.collection('pets');
-                    await petsRef.doc(widget.docFireBase.id).update(
-                      {
-                        'name': pets.name,
-                        'kind': pets.kind,
-                        'gender': pets.gender,
-                        'age': pets.age,
-                        'description': pets.description,
-                        'image': pets.image,
-                      },
-                    );
-                    nameController.clear();
-                    kindController.clear();
-                    genderController.clear();
-                    ageController.clear();
-                    descriptionController.clear();
-                    imageController.clear();
-                    Navigator.pop(context);
-                  },
-                ),
-              ),
-            ),
-          ),
+          widget.whatToDo == "Изменить"
+              ? FloatingNavbarItem(
+                  customWidget: SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.20,
+                    height: MediaQuery.of(context).size.width * 0.18,
+                    child: Card(
+                      color: const Color.fromARGB(200, 229, 242, 255),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: IconButton(
+                        icon: const Icon(Icons.update),
+                        color: const Color.fromARGB(100, 0, 0, 0),
+                        onPressed: () async {
+                          CollectionReference petsRef =
+                              FirebaseFirestore.instance.collection('pets');
+                          await petsRef.doc(widget.docFireBase.id).update(
+                            {
+                              'name': pets.name,
+                              'kind': pets.kind,
+                              'gender': pets.gender,
+                              'age': pets.age,
+                              'description': pets.description,
+                              'image': pets.image,
+                            },
+                          );
+                          nameController.clear();
+                          kindController.clear();
+                          genderController.clear();
+                          ageController.clear();
+                          descriptionController.clear();
+                          imageController.clear();
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ),
+                  ),
+                )
+              : FloatingNavbarItem(
+                  customWidget: SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.20,
+                    height: MediaQuery.of(context).size.width * 0.18,
+                    child: Card(
+                      color: const Color.fromARGB(200, 229, 242, 255),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: IconButton(
+                        icon: const Icon(Icons.add),
+                        color: const Color.fromARGB(100, 0, 0, 0),
+                        onPressed: () async {
+                          pets.name = nameController.text;
+                          pets.kind = kindController.text;
+                          pets.gender = genderController.text;
+                          pets.age = ageController.text;
+                          pets.description = descriptionController.text;
+                          pets.image = imageController.text;
+                          CollectionReference petsRef =
+                              FirebaseFirestore.instance.collection('pets');
+                          await petsRef.add(
+                            {
+                              'name': pets.name,
+                              'kind': pets.kind,
+                              'gender': pets.gender,
+                              'age': pets.age,
+                              'description': pets.description,
+                              'image': pets.image,
+                            },
+                          );
+                          nameController.clear();
+                          kindController.clear();
+                          genderController.clear();
+                          ageController.clear();
+                          descriptionController.clear();
+                          imageController.clear();
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ),
+                  ),
+                )
+          // FloatingNavbarItem(
+          //   customWidget: SizedBox(
+          //     width: MediaQuery.of(context).size.width * 0.20,
+          //     height: MediaQuery.of(context).size.width * 0.18,
+          //     child: Card(
+          //       color: const Color.fromARGB(200, 229, 242, 255),
+          //       shape: RoundedRectangleBorder(
+          //         borderRadius: BorderRadius.circular(15),
+          //       ),
+          //       child: IconButton(
+          //         icon: const Icon(Icons.delete),
+          //         color: const Color.fromARGB(100, 0, 0, 0),
+          //         onPressed: () async {
+          //           CollectionReference petsRef =
+          //               FirebaseFirestore.instance.collection('pets');
+          //           await petsRef.doc(widget.docFireBase.id).update(
+          //             {
+          //               'name': pets.name,
+          //               'kind': pets.kind,
+          //               'gender': pets.gender,
+          //               'age': pets.age,
+          //               'description': pets.description,
+          //               'image': pets.image,
+          //             },
+          //           );
+          //           nameController.clear();
+          //           kindController.clear();
+          //           genderController.clear();
+          //           ageController.clear();
+          //           descriptionController.clear();
+          //           imageController.clear();
+          //           Navigator.pop(context);
+          //         },
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
       extendBodyBehindAppBar: true,
@@ -375,39 +441,52 @@ class _DataPageState extends State<DataPage> {
                   ),
                 ),
                 Card(
-                  color: const Color.fromARGB(255, 231, 243, 255),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  elevation: 10,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      label: const Text(
-                        "Фото",
-                        style: TextStyle(
-                          fontFamily: 'PlayfairDisplay',
-                        ),
-                      ),
-                      labelStyle: const TextStyle(
-                        color: Color.fromARGB(100, 0, 0, 0),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: const BorderSide(
-                          color: Color.fromARGB(255, 231, 243, 255),
-                        ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: const BorderSide(
-                          color: Color.fromARGB(255, 231, 243, 255),
-                        ),
-                      ),
+                    color: const Color.fromARGB(255, 231, 243, 255),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
                     ),
-                    controller: imageController,
-                    cursorColor: const Color.fromARGB(101, 133, 166, 255),
-                  ),
-                ),
+                    elevation: 10,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        //selectFile;
+                        //_pickImage(ImageSource.gallery);
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Text("Добавить картинку"),
+                          Icon(Icons.add),
+                        ],
+                      ),
+                    ))
+                // TextField(
+                //   decoration: InputDecoration(
+                //     label: const Text(
+                //       "Фото",
+                //       style: TextStyle(
+                //         fontFamily: 'PlayfairDisplay',
+                //       ),
+                //     ),
+                //     labelStyle: const TextStyle(
+                //       color: Color.fromARGB(100, 0, 0, 0),
+                //     ),
+                //     focusedBorder: OutlineInputBorder(
+                //       borderRadius: BorderRadius.circular(15),
+                //       borderSide: const BorderSide(
+                //         color: Color.fromARGB(255, 231, 243, 255),
+                //       ),
+                //     ),
+                //     enabledBorder: OutlineInputBorder(
+                //       borderRadius: BorderRadius.circular(15),
+                //       borderSide: const BorderSide(
+                //         color: Color.fromARGB(255, 231, 243, 255),
+                //       ),
+                //     ),
+                //   ),
+                //   controller: imageController,
+                //   cursorColor: const Color.fromARGB(101, 133, 166, 255),
+                // ),
+                //),
                 // SizedBox(
                 //   height: MediaQuery.of(context).size.height * 0.02,
                 // ),
