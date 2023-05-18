@@ -92,7 +92,7 @@ class _DataPageState extends State<DataPage> {
       imageController.text = widget.image.toString();
     }
     return Scaffold(
-      extendBody: true,
+      //extendBody: true,
       bottomNavigationBar: FloatingNavbar(
         backgroundColor: const Color.fromARGB(255, 241, 251, 255),
         onTap: (int val) {},
@@ -437,6 +437,166 @@ class _DataPageState extends State<DataPage> {
                       ),
                     ),
                     controller: descriptionController,
+                    cursorColor: const Color.fromARGB(101, 133, 166, 255),
+                  ),
+                ),
+                Card(
+                  color: const Color.fromARGB(255, 231, 243, 255),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  elevation: 10,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      label: const Text("Стерилизация/кастрация",
+                          style: TextStyle(
+                            fontFamily: 'PlayfairDisplay',
+                          )),
+                      labelStyle: const TextStyle(
+                        color: Color.fromARGB(100, 0, 0, 0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: const BorderSide(
+                          color: Color.fromARGB(255, 231, 243, 255),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: const BorderSide(
+                          color: Color.fromARGB(255, 231, 243, 255),
+                        ),
+                      ),
+                    ),
+                    //controller: kindController,
+                    cursorColor: const Color.fromARGB(101, 133, 166, 255),
+                  ),
+                ),
+                Card(
+                  color: const Color.fromARGB(255, 231, 243, 255),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  elevation: 10,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      label: const Text("Обработка от паразитов",
+                          style: TextStyle(
+                            fontFamily: 'PlayfairDisplay',
+                          )),
+                      labelStyle: const TextStyle(
+                        color: Color.fromARGB(100, 0, 0, 0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: const BorderSide(
+                          color: Color.fromARGB(255, 231, 243, 255),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: const BorderSide(
+                          color: Color.fromARGB(255, 231, 243, 255),
+                        ),
+                      ),
+                    ),
+                    //controller: kindController,
+                    cursorColor: const Color.fromARGB(101, 133, 166, 255),
+                  ),
+                ),
+                Card(
+                  color: const Color.fromARGB(255, 231, 243, 255),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  elevation: 10,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      label: const Text("Вакцинация",
+                          style: TextStyle(
+                            fontFamily: 'PlayfairDisplay',
+                          )),
+                      labelStyle: const TextStyle(
+                        color: Color.fromARGB(100, 0, 0, 0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: const BorderSide(
+                          color: Color.fromARGB(255, 231, 243, 255),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: const BorderSide(
+                          color: Color.fromARGB(255, 231, 243, 255),
+                        ),
+                      ),
+                    ),
+                    //controller: kindController,
+                    cursorColor: const Color.fromARGB(101, 133, 166, 255),
+                  ),
+                ),
+                Card(
+                  color: const Color.fromARGB(255, 231, 243, 255),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  elevation: 10,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      label: const Text("Чипирование",
+                          style: TextStyle(
+                            fontFamily: 'PlayfairDisplay',
+                          )),
+                      labelStyle: const TextStyle(
+                        color: Color.fromARGB(100, 0, 0, 0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: const BorderSide(
+                          color: Color.fromARGB(255, 231, 243, 255),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: const BorderSide(
+                          color: Color.fromARGB(255, 231, 243, 255),
+                        ),
+                      ),
+                    ),
+                    //controller: kindController,
+                    cursorColor: const Color.fromARGB(101, 133, 166, 255),
+                  ),
+                ),
+                Card(
+                  color: const Color.fromARGB(255, 231, 243, 255),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  elevation: 10,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      label: const Text("Ветеринарный паспорт",
+                          style: TextStyle(
+                            fontFamily: 'PlayfairDisplay',
+                          )),
+                      labelStyle: const TextStyle(
+                        color: Color.fromARGB(100, 0, 0, 0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: const BorderSide(
+                          color: Color.fromARGB(255, 231, 243, 255),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: const BorderSide(
+                          color: Color.fromARGB(255, 231, 243, 255),
+                        ),
+                      ),
+                    ),
+                    //controller: kindController,
                     cursorColor: const Color.fromARGB(101, 133, 166, 255),
                   ),
                 ),
