@@ -338,10 +338,10 @@ class _PetsDataPageState extends State<PetsDataPage> {
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.2,
                           height: MediaQuery.of(context).size.height * 0.04,
-                          child: const Text(
-                            "Да",
+                          child: Text(
+                            docs.data()['sterilization'] ?? "",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: 'PlayfairDisplay',
                               fontSize: 15,
                             ),
@@ -366,10 +366,10 @@ class _PetsDataPageState extends State<PetsDataPage> {
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.2,
                           height: MediaQuery.of(context).size.height * 0.04,
-                          child: const Text(
-                            "Да",
+                          child: Text(
+                            docs.data()['treatment'] ?? "",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: 'PlayfairDisplay',
                               fontSize: 15,
                             ),
@@ -394,10 +394,10 @@ class _PetsDataPageState extends State<PetsDataPage> {
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.2,
                           height: MediaQuery.of(context).size.height * 0.04,
-                          child: const Text(
-                            "Да",
+                          child: Text(
+                            docs.data()['vaccination'] ?? "",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: 'PlayfairDisplay',
                               fontSize: 15,
                             ),
@@ -422,10 +422,10 @@ class _PetsDataPageState extends State<PetsDataPage> {
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.2,
                           height: MediaQuery.of(context).size.height * 0.04,
-                          child: const Text(
-                            "Да",
+                          child: Text(
+                            docs.data()['chipping'] ?? "",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: 'PlayfairDisplay',
                               fontSize: 15,
                             ),
@@ -450,10 +450,10 @@ class _PetsDataPageState extends State<PetsDataPage> {
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.2,
                           height: MediaQuery.of(context).size.height * 0.04,
-                          child: const Text(
-                            "Да",
+                          child: Text(
+                            docs.data()['passport'] ?? "",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: 'PlayfairDisplay',
                               fontSize: 15,
                             ),
@@ -519,6 +519,11 @@ class Pets {
   String? gender;
   String? age;
   String? description;
+  String? sterilization;
+  String? treatment;
+  String? vaccination;
+  String? chipping;
+  String? passport;
   String? image;
   Pets({
     this.id,
@@ -527,6 +532,11 @@ class Pets {
     this.gender,
     this.age,
     this.description,
+    this.sterilization,
+    this.treatment,
+    this.vaccination,
+    this.chipping,
+    this.passport,
     this.image,
   });
 }

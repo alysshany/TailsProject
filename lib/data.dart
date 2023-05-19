@@ -16,6 +16,11 @@ class DataPage extends StatefulWidget {
   String? gender;
   String? age;
   String? description;
+  String? sterilization;
+  String? treatment;
+  String? vaccination;
+  String? chipping;
+  String? passport;
   String? image;
   String? whatToDo;
 
@@ -28,6 +33,11 @@ class DataPage extends StatefulWidget {
       this.gender,
       this.age,
       this.description,
+      this.sterilization,
+      this.treatment,
+      this.vaccination,
+      this.chipping,
+      this.passport,
       this.image,
       this.whatToDo})
       : super(key: key);
@@ -43,6 +53,12 @@ class _DataPageState extends State<DataPage> {
   TextEditingController ageController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
   TextEditingController imageController = TextEditingController();
+  TextEditingController sterilizationController = TextEditingController();
+  TextEditingController treatmentController = TextEditingController();
+  TextEditingController vaccinationController = TextEditingController();
+  TextEditingController chippingController = TextEditingController();
+  TextEditingController passportController = TextEditingController();
+
   Pets pets = Pets();
 
   // Future selectFile() async {
