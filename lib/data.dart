@@ -99,13 +99,23 @@ class _DataPageState extends State<DataPage> {
         widget.gender != null ||
         widget.age != null ||
         widget.description != null ||
-        widget.image != null) {
+        widget.image != null ||
+        widget.sterilization != null ||
+        widget.treatment != null ||
+        widget.vaccination != null ||
+        widget.chipping != null ||
+        widget.passport != null) {
       nameController.text = widget.name.toString();
       kindController.text = widget.kind.toString();
       genderController.text = widget.gender.toString();
       ageController.text = widget.age.toString();
       descriptionController.text = widget.description.toString();
       imageController.text = widget.image.toString();
+      sterilizationController.text = widget.sterilization.toString();
+      treatmentController.text = widget.treatment.toString();
+      vaccinationController.text = widget.vaccination.toString();
+      chippingController.text = widget.chipping.toString();
+      passportController.text = widget.passport.toString();
     }
     return Scaffold(
       //extendBody: true,
@@ -137,6 +147,11 @@ class _DataPageState extends State<DataPage> {
                         'age': pets.age,
                         'description': pets.description,
                         'image': pets.image,
+                        'sterilization': pets.sterilization,
+                        'treatment': pets.treatment,
+                        'vaccination': pets.vaccination,
+                        'chipping': pets.chipping,
+                        'passport': pets.passport
                       },
                     );
                     nameController.clear();
@@ -145,6 +160,11 @@ class _DataPageState extends State<DataPage> {
                     ageController.clear();
                     descriptionController.clear();
                     imageController.clear();
+                    sterilizationController.clear();
+                    treatmentController.clear();
+                    vaccinationController.clear();
+                    chippingController.clear();
+                    passportController.clear();
                     Navigator.pop(context);
                   },
                 ),
@@ -175,6 +195,11 @@ class _DataPageState extends State<DataPage> {
                               'age': pets.age,
                               'description': pets.description,
                               'image': pets.image,
+                              'sterilization': pets.sterilization,
+                              'treatment': pets.treatment,
+                              'vaccination': pets.vaccination,
+                              'chipping': pets.chipping,
+                              'passport': pets.passport
                             },
                           );
                           nameController.clear();
@@ -183,6 +208,11 @@ class _DataPageState extends State<DataPage> {
                           ageController.clear();
                           descriptionController.clear();
                           imageController.clear();
+                          sterilizationController.clear();
+                          treatmentController.clear();
+                          vaccinationController.clear();
+                          chippingController.clear();
+                          passportController.clear();
                           Navigator.pop(context);
                         },
                       ),
@@ -208,6 +238,11 @@ class _DataPageState extends State<DataPage> {
                           pets.age = ageController.text;
                           pets.description = descriptionController.text;
                           pets.image = imageController.text;
+                          pets.sterilization = sterilizationController.text;
+                          pets.treatment = treatmentController.text;
+                          pets.vaccination = vaccinationController.text;
+                          pets.chipping = chippingController.text;
+                          pets.passport = passportController.text;
                           CollectionReference petsRef =
                               FirebaseFirestore.instance.collection('pets');
                           await petsRef.add(
@@ -218,6 +253,11 @@ class _DataPageState extends State<DataPage> {
                               'age': pets.age,
                               'description': pets.description,
                               'image': pets.image,
+                              'sterilization': pets.sterilization,
+                              'treatment': pets.treatment,
+                              'vaccination': pets.vaccination,
+                              'chipping': pets.chipping,
+                              'passport': pets.passport
                             },
                           );
                           nameController.clear();
@@ -226,6 +266,11 @@ class _DataPageState extends State<DataPage> {
                           ageController.clear();
                           descriptionController.clear();
                           imageController.clear();
+                          sterilizationController.clear();
+                          treatmentController.clear();
+                          vaccinationController.clear();
+                          chippingController.clear();
+                          passportController.clear();
                           Navigator.pop(context);
                         },
                       ),
@@ -464,7 +509,7 @@ class _DataPageState extends State<DataPage> {
                   elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Стерилизация/кастрация",
+                      label: const Text("Стерилизация/кастрация (Да/Нет)",
                           style: TextStyle(
                             fontFamily: 'PlayfairDisplay',
                           )),
@@ -484,7 +529,7 @@ class _DataPageState extends State<DataPage> {
                         ),
                       ),
                     ),
-                    //controller: kindController,
+                    controller: sterilizationController,
                     cursorColor: const Color.fromARGB(101, 133, 166, 255),
                   ),
                 ),
@@ -496,7 +541,7 @@ class _DataPageState extends State<DataPage> {
                   elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Обработка от паразитов",
+                      label: const Text("Обработка от паразитов (Да/Нет)",
                           style: TextStyle(
                             fontFamily: 'PlayfairDisplay',
                           )),
@@ -516,7 +561,7 @@ class _DataPageState extends State<DataPage> {
                         ),
                       ),
                     ),
-                    //controller: kindController,
+                    controller: treatmentController,
                     cursorColor: const Color.fromARGB(101, 133, 166, 255),
                   ),
                 ),
@@ -528,7 +573,7 @@ class _DataPageState extends State<DataPage> {
                   elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Вакцинация",
+                      label: const Text("Вакцинация (Да/Нет)",
                           style: TextStyle(
                             fontFamily: 'PlayfairDisplay',
                           )),
@@ -548,7 +593,7 @@ class _DataPageState extends State<DataPage> {
                         ),
                       ),
                     ),
-                    //controller: kindController,
+                    controller: vaccinationController,
                     cursorColor: const Color.fromARGB(101, 133, 166, 255),
                   ),
                 ),
@@ -560,7 +605,7 @@ class _DataPageState extends State<DataPage> {
                   elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Чипирование",
+                      label: const Text("Чипирование (Да/Нет)",
                           style: TextStyle(
                             fontFamily: 'PlayfairDisplay',
                           )),
@@ -580,7 +625,7 @@ class _DataPageState extends State<DataPage> {
                         ),
                       ),
                     ),
-                    //controller: kindController,
+                    controller: chippingController,
                     cursorColor: const Color.fromARGB(101, 133, 166, 255),
                   ),
                 ),
@@ -592,7 +637,7 @@ class _DataPageState extends State<DataPage> {
                   elevation: 10,
                   child: TextField(
                     decoration: InputDecoration(
-                      label: const Text("Ветеринарный паспорт",
+                      label: const Text("Ветеринарный паспорт (Да/Нет)",
                           style: TextStyle(
                             fontFamily: 'PlayfairDisplay',
                           )),
@@ -612,7 +657,7 @@ class _DataPageState extends State<DataPage> {
                         ),
                       ),
                     ),
-                    //controller: kindController,
+                    controller: passportController,
                     cursorColor: const Color.fromARGB(101, 133, 166, 255),
                   ),
                 ),
