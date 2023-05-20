@@ -54,7 +54,7 @@ class _AuthPageState extends State<AuthPage> {
                 width: MediaQuery.of(context).size.width * 0.8,
                 child: TextField(
                   style: const TextStyle(
-                    color: Color.fromARGB(159, 188, 217, 255),
+                    color: Colors.black,
                   ),
                   controller: emailController,
                   cursorColor: const Color.fromARGB(159, 188, 217, 255),
@@ -91,7 +91,7 @@ class _AuthPageState extends State<AuthPage> {
                 width: MediaQuery.of(context).size.width * 0.8,
                 child: TextField(
                   style: const TextStyle(
-                    color: Color.fromARGB(159, 188, 217, 255),
+                    color: Colors.black,
                   ),
                   obscureText: true,
                   controller: passwordController,

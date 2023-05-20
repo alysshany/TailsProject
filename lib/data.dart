@@ -134,203 +134,245 @@ class _DataPageState extends State<DataPage> {
     }
     return Scaffold(
       //extendBody: true,
-      bottomNavigationBar: FloatingNavbar(
-        backgroundColor: const Color.fromARGB(255, 241, 251, 255),
-        onTap: (int val) {},
-        currentIndex: -1,
-        items: [
-          FloatingNavbarItem(
-            customWidget: SizedBox(
-              width: MediaQuery.of(context).size.width * 0.20,
-              height: MediaQuery.of(context).size.width * 0.18,
-              child: Card(
-                color: const Color.fromARGB(200, 229, 242, 255),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: IconButton(
-                  icon: const Icon(Icons.update),
-                  color: const Color.fromARGB(100, 0, 0, 0),
-                  onPressed: () async {
-                    CollectionReference petsRef =
-                        FirebaseFirestore.instance.collection('pets');
-                    await petsRef.doc(widget.docFireBase.id).update(
-                      {
-                        'name': nameController.text,
-                        'kind': kindController.text,
-                        'gender': genderController.text,
-                        'age': ageController.text,
-                        'description': descriptionController.text,
-                        'image': imageController.text,
-                        'sterilization': sterilizationController.text,
-                        'treatment': treatmentController.text,
-                        'vaccination': vaccinationController.text,
-                        'chipping': chippingController.text,
-                        'passport': passportController.text
-                      },
-                    );
-                    nameController.clear();
-                    kindController.clear();
-                    genderController.clear();
-                    ageController.clear();
-                    descriptionController.clear();
-                    imageController.clear();
-                    sterilizationController.clear();
-                    treatmentController.clear();
-                    vaccinationController.clear();
-                    chippingController.clear();
-                    passportController.clear();
-                    Navigator.pop(context);
-                  },
-                ),
-              ),
-            ),
-          ),
-          widget.whatToDo == "Изменить"
-              ? FloatingNavbarItem(
-                  customWidget: SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.20,
-                    height: MediaQuery.of(context).size.width * 0.18,
-                    child: Card(
-                      color: const Color.fromARGB(200, 229, 242, 255),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: IconButton(
-                        icon: const Icon(Icons.update),
-                        color: const Color.fromARGB(100, 0, 0, 0),
-                        onPressed: () async {
-                          CollectionReference petsRef =
-                              FirebaseFirestore.instance.collection('pets');
-                          await petsRef.doc(widget.docFireBase.id).update(
-                            {
-                              'name': nameController.text,
-                              'kind': kindController.text,
-                              'gender': genderController.text,
-                              'age': ageController.text,
-                              'description': descriptionController.text,
-                              'image': imageController.text,
-                              'sterilization': sterilizationController.text,
-                              'treatment': treatmentController.text,
-                              'vaccination': vaccinationController.text,
-                              'chipping': chippingController.text,
-                              'passport': passportController.text
-                            },
-                          );
-                          nameController.clear();
-                          kindController.clear();
-                          genderController.clear();
-                          ageController.clear();
-                          descriptionController.clear();
-                          imageController.clear();
-                          sterilizationController.clear();
-                          treatmentController.clear();
-                          vaccinationController.clear();
-                          chippingController.clear();
-                          passportController.clear();
-                          Navigator.pop(context);
-                        },
-                      ),
-                    ),
-                  ),
-                )
-              : FloatingNavbarItem(
-                  customWidget: SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.20,
-                    height: MediaQuery.of(context).size.width * 0.18,
-                    child: Card(
-                      color: const Color.fromARGB(200, 229, 242, 255),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: IconButton(
-                        icon: const Icon(Icons.add),
-                        color: const Color.fromARGB(100, 0, 0, 0),
-                        onPressed: () async {
-                          pets.name = nameController.text;
-                          pets.kind = kindController.text;
-                          pets.gender = genderController.text;
-                          pets.age = ageController.text;
-                          pets.description = descriptionController.text;
-                          pets.image = imageController.text;
-                          pets.sterilization = sterilizationController.text;
-                          pets.treatment = treatmentController.text;
-                          pets.vaccination = vaccinationController.text;
-                          pets.chipping = chippingController.text;
-                          pets.passport = passportController.text;
-                          CollectionReference petsRef =
-                              FirebaseFirestore.instance.collection('pets');
-                          await petsRef.add(
-                            {
-                              'name': pets.name,
-                              'kind': pets.kind,
-                              'gender': pets.gender,
-                              'age': pets.age,
-                              'description': pets.description,
-                              'image': pets.image,
-                              'sterilization': pets.sterilization,
-                              'treatment': pets.treatment,
-                              'vaccination': pets.vaccination,
-                              'chipping': pets.chipping,
-                              'passport': pets.passport
-                            },
-                          );
-                          nameController.clear();
-                          kindController.clear();
-                          genderController.clear();
-                          ageController.clear();
-                          descriptionController.clear();
-                          imageController.clear();
-                          sterilizationController.clear();
-                          treatmentController.clear();
-                          vaccinationController.clear();
-                          chippingController.clear();
-                          passportController.clear();
-                          Navigator.pop(context);
-                        },
-                      ),
-                    ),
-                  ),
-                )
-          // FloatingNavbarItem(
-          //   customWidget: SizedBox(
-          //     width: MediaQuery.of(context).size.width * 0.20,
-          //     height: MediaQuery.of(context).size.width * 0.18,
-          //     child: Card(
-          //       color: const Color.fromARGB(200, 229, 242, 255),
-          //       shape: RoundedRectangleBorder(
-          //         borderRadius: BorderRadius.circular(15),
-          //       ),
-          //       child: IconButton(
-          //         icon: const Icon(Icons.delete),
-          //         color: const Color.fromARGB(100, 0, 0, 0),
-          //         onPressed: () async {
-          //           CollectionReference petsRef =
-          //               FirebaseFirestore.instance.collection('pets');
-          //           await petsRef.doc(widget.docFireBase.id).update(
-          //             {
-          //               'name': pets.name,
-          //               'kind': pets.kind,
-          //               'gender': pets.gender,
-          //               'age': pets.age,
-          //               'description': pets.description,
-          //               'image': pets.image,
-          //             },
-          //           );
-          //           nameController.clear();
-          //           kindController.clear();
-          //           genderController.clear();
-          //           ageController.clear();
-          //           descriptionController.clear();
-          //           imageController.clear();
-          //           Navigator.pop(context);
-          //         },
-          //       ),
-          //     ),
-          //   ),
-          // ),
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: [
+      //     widget.whatToDo == "Изменить"
+      //         ? BottomNavigationBarItem(
+      //             label: "Изменить",
+      //             icon: IconButton(
+      //               icon: const Icon(Icons.update),
+      //               color: const Color.fromARGB(100, 0, 0, 0),
+      //               onPressed: () async {
+      //                 CollectionReference petsRef =
+      //                     FirebaseFirestore.instance.collection('pets');
+      //                 await petsRef.doc(widget.docFireBase.id).update(
+      //                   {
+      //                     'name': nameController.text,
+      //                     'kind': kindController.text,
+      //                     'gender': genderController.text,
+      //                     'age': ageController.text,
+      //                     'description': descriptionController.text,
+      //                     'image': imageController.text,
+      //                     'sterilization': sterilizationController.text,
+      //                     'treatment': treatmentController.text,
+      //                     'vaccination': vaccinationController.text,
+      //                     'chipping': chippingController.text,
+      //                     'passport': passportController.text
+      //                   },
+      //                 );
+      //                 nameController.clear();
+      //                 kindController.clear();
+      //                 genderController.clear();
+      //                 ageController.clear();
+      //                 descriptionController.clear();
+      //                 imageController.clear();
+      //                 sterilizationController.clear();
+      //                 treatmentController.clear();
+      //                 vaccinationController.clear();
+      //                 chippingController.clear();
+      //                 passportController.clear();
+      //                 Navigator.pop(context);
+      //               },
+      //             ),
+      //           )
+      //         : BottomNavigationBarItem(
+      //             label: "Добавить",
+      //             icon: IconButton(
+      //               icon: const Icon(Icons.add),
+      //               color: const Color.fromARGB(100, 0, 0, 0),
+      //               onPressed: () async {
+      //                 pets.name = nameController.text;
+      //                 pets.kind = kindController.text;
+      //                 pets.gender = genderController.text;
+      //                 pets.age = ageController.text;
+      //                 pets.description = descriptionController.text;
+      //                 pets.image = imageController.text;
+      //                 pets.sterilization = sterilizationController.text;
+      //                 pets.treatment = treatmentController.text;
+      //                 pets.vaccination = vaccinationController.text;
+      //                 pets.chipping = chippingController.text;
+      //                 pets.passport = passportController.text;
+      //                 CollectionReference petsRef =
+      //                     FirebaseFirestore.instance.collection('pets');
+      //                 await petsRef.add(
+      //                   {
+      //                     'name': pets.name,
+      //                     'kind': pets.kind,
+      //                     'gender': pets.gender,
+      //                     'age': pets.age,
+      //                     'description': pets.description,
+      //                     'image': pets.image,
+      //                     'sterilization': pets.sterilization,
+      //                     'treatment': pets.treatment,
+      //                     'vaccination': pets.vaccination,
+      //                     'chipping': pets.chipping,
+      //                     'passport': pets.passport
+      //                   },
+      //                 );
+      //                 nameController.clear();
+      //                 kindController.clear();
+      //                 genderController.clear();
+      //                 ageController.clear();
+      //                 descriptionController.clear();
+      //                 imageController.clear();
+      //                 sterilizationController.clear();
+      //                 treatmentController.clear();
+      //                 vaccinationController.clear();
+      //                 chippingController.clear();
+      //                 passportController.clear();
+      //                 Navigator.pop(context);
+      //               },
+      //             ),
+      //           )
+      //   ],
+      // ),
+      // bottomNavigationBar: FloatingNavbar(
+      //   width: MediaQuery.of(context).size.width * 0.8,
+      //   backgroundColor: const Color.fromARGB(255, 241, 251, 255),
+      //   onTap: (int val) {},
+      //   currentIndex: -1,
+      //   items: [
+      //     widget.whatToDo == "Изменить"
+      //         ? FloatingNavbarItem(
+      //             customWidget: SizedBox(
+      //               child: Card(
+      //                 color: const Color.fromARGB(200, 229, 242, 255),
+      //                 shape: RoundedRectangleBorder(
+      //                   borderRadius: BorderRadius.circular(15),
+      //                 ),
+      //                 child: IconButton(
+      //                   icon: const Icon(Icons.update),
+      //                   color: const Color.fromARGB(100, 0, 0, 0),
+      //                   onPressed: () async {
+      //                     CollectionReference petsRef =
+      //                         FirebaseFirestore.instance.collection('pets');
+      //                     await petsRef.doc(widget.docFireBase.id).update(
+      //                       {
+      //                         'name': nameController.text,
+      //                         'kind': kindController.text,
+      //                         'gender': genderController.text,
+      //                         'age': ageController.text,
+      //                         'description': descriptionController.text,
+      //                         'image': imageController.text,
+      //                         'sterilization': sterilizationController.text,
+      //                         'treatment': treatmentController.text,
+      //                         'vaccination': vaccinationController.text,
+      //                         'chipping': chippingController.text,
+      //                         'passport': passportController.text
+      //                       },
+      //                     );
+      //                     nameController.clear();
+      //                     kindController.clear();
+      //                     genderController.clear();
+      //                     ageController.clear();
+      //                     descriptionController.clear();
+      //                     imageController.clear();
+      //                     sterilizationController.clear();
+      //                     treatmentController.clear();
+      //                     vaccinationController.clear();
+      //                     chippingController.clear();
+      //                     passportController.clear();
+      //                     Navigator.pop(context);
+      //                   },
+      //                 ),
+      //               ),
+      //             ),
+      //           )
+      //         : FloatingNavbarItem(
+      //             customWidget: SizedBox(
+      //               child: Card(
+      //                 color: const Color.fromARGB(200, 229, 242, 255),
+      //                 shape: RoundedRectangleBorder(
+      //                   borderRadius: BorderRadius.circular(15),
+      //                 ),
+      //                 child: IconButton(
+      //                   icon: const Icon(Icons.add),
+      //                   color: const Color.fromARGB(100, 0, 0, 0),
+      //                   onPressed: () async {
+      //                     pets.name = nameController.text;
+      //                     pets.kind = kindController.text;
+      //                     pets.gender = genderController.text;
+      //                     pets.age = ageController.text;
+      //                     pets.description = descriptionController.text;
+      //                     pets.image = imageController.text;
+      //                     pets.sterilization = sterilizationController.text;
+      //                     pets.treatment = treatmentController.text;
+      //                     pets.vaccination = vaccinationController.text;
+      //                     pets.chipping = chippingController.text;
+      //                     pets.passport = passportController.text;
+      //                     CollectionReference petsRef =
+      //                         FirebaseFirestore.instance.collection('pets');
+      //                     await petsRef.add(
+      //                       {
+      //                         'name': pets.name,
+      //                         'kind': pets.kind,
+      //                         'gender': pets.gender,
+      //                         'age': pets.age,
+      //                         'description': pets.description,
+      //                         'image': pets.image,
+      //                         'sterilization': pets.sterilization,
+      //                         'treatment': pets.treatment,
+      //                         'vaccination': pets.vaccination,
+      //                         'chipping': pets.chipping,
+      //                         'passport': pets.passport
+      //                       },
+      //                     );
+      //                     nameController.clear();
+      //                     kindController.clear();
+      //                     genderController.clear();
+      //                     ageController.clear();
+      //                     descriptionController.clear();
+      //                     imageController.clear();
+      //                     sterilizationController.clear();
+      //                     treatmentController.clear();
+      //                     vaccinationController.clear();
+      //                     chippingController.clear();
+      //                     passportController.clear();
+      //                     Navigator.pop(context);
+      //                   },
+      //                 ),
+      //               ),
+      //             ),
+      //           )
+      //     // FloatingNavbarItem(
+      //     //   customWidget: SizedBox(
+      //     //     width: MediaQuery.of(context).size.width * 0.20,
+      //     //     height: MediaQuery.of(context).size.width * 0.18,
+      //     //     child: Card(
+      //     //       color: const Color.fromARGB(200, 229, 242, 255),
+      //     //       shape: RoundedRectangleBorder(
+      //     //         borderRadius: BorderRadius.circular(15),
+      //     //       ),
+      //     //       child: IconButton(
+      //     //         icon: const Icon(Icons.delete),
+      //     //         color: const Color.fromARGB(100, 0, 0, 0),
+      //     //         onPressed: () async {
+      //     //           CollectionReference petsRef =
+      //     //               FirebaseFirestore.instance.collection('pets');
+      //     //           await petsRef.doc(widget.docFireBase.id).update(
+      //     //             {
+      //     //               'name': pets.name,
+      //     //               'kind': pets.kind,
+      //     //               'gender': pets.gender,
+      //     //               'age': pets.age,
+      //     //               'description': pets.description,
+      //     //               'image': pets.image,
+      //     //             },
+      //     //           );
+      //     //           nameController.clear();
+      //     //           kindController.clear();
+      //     //           genderController.clear();
+      //     //           ageController.clear();
+      //     //           descriptionController.clear();
+      //     //           imageController.clear();
+      //     //           Navigator.pop(context);
+      //     //         },
+      //     //       ),
+      //     //     ),
+      //     //   ),
+      //     // ),
+      //   ],
+      // ),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         elevation: 0,
@@ -364,6 +406,7 @@ class _DataPageState extends State<DataPage> {
                       ),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
+                        fontFamily: 'PlayfairDisplay',
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -396,6 +439,7 @@ class _DataPageState extends State<DataPage> {
                           )),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
+                        fontFamily: 'PlayfairDisplay',
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -430,6 +474,7 @@ class _DataPageState extends State<DataPage> {
                       ),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
+                        fontFamily: 'PlayfairDisplay',
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -464,6 +509,7 @@ class _DataPageState extends State<DataPage> {
                       ),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
+                        fontFamily: 'PlayfairDisplay',
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -498,6 +544,7 @@ class _DataPageState extends State<DataPage> {
                       ),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
+                        fontFamily: 'PlayfairDisplay',
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -530,6 +577,7 @@ class _DataPageState extends State<DataPage> {
                           )),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
+                        fontFamily: 'PlayfairDisplay',
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -562,6 +610,7 @@ class _DataPageState extends State<DataPage> {
                           )),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
+                        fontFamily: 'PlayfairDisplay',
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -594,6 +643,7 @@ class _DataPageState extends State<DataPage> {
                           )),
                       labelStyle: const TextStyle(
                         color: Color.fromARGB(100, 0, 0, 0),
+                        fontFamily: 'PlayfairDisplay',
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -683,6 +733,10 @@ class _DataPageState extends State<DataPage> {
                     ),
                     elevation: 10,
                     child: ElevatedButton(
+                      style: const ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll<Color>(
+                            Color.fromARGB(255, 231, 243, 255)),
+                      ),
                       onPressed: () {
                         //selectFile;
                         _pickImage(ImageSource.gallery);
@@ -690,11 +744,117 @@ class _DataPageState extends State<DataPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
-                          Text("Добавить картинку"),
-                          Icon(Icons.add),
+                          Text("Добавить картинку",
+                              style: TextStyle(
+                                  color: Color.fromARGB(100, 0, 0, 0),
+                                  fontFamily: 'PlayfairDisplay')),
+                          Icon(
+                            Icons.add,
+                            color: Color.fromARGB(100, 0, 0, 0),
+                          ),
                         ],
                       ),
-                    ))
+                    )),
+                widget.whatToDo == "Изменить"
+                    ? Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        elevation: 5,
+                        child: IconButton(
+                          icon: const Icon(
+                            Icons.update,
+                            color: Colors.black,
+                          ),
+                          color: const Color.fromARGB(100, 0, 0, 0),
+                          onPressed: () async {
+                            CollectionReference petsRef =
+                                FirebaseFirestore.instance.collection('pets');
+                            await petsRef.doc(widget.docFireBase.id).update(
+                              {
+                                'name': nameController.text,
+                                'kind': kindController.text,
+                                'gender': genderController.text,
+                                'age': ageController.text,
+                                'description': descriptionController.text,
+                                'image': imageController.text,
+                                'sterilization': sterilizationController.text,
+                                'treatment': treatmentController.text,
+                                'vaccination': vaccinationController.text,
+                                'chipping': chippingController.text,
+                                'passport': passportController.text
+                              },
+                            );
+                            nameController.clear();
+                            kindController.clear();
+                            genderController.clear();
+                            ageController.clear();
+                            descriptionController.clear();
+                            imageController.clear();
+                            sterilizationController.clear();
+                            treatmentController.clear();
+                            vaccinationController.clear();
+                            chippingController.clear();
+                            passportController.clear();
+                            Navigator.pop(context);
+                          },
+                        ),
+                      )
+                    : Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        elevation: 5,
+                        child: IconButton(
+                          icon: const Icon(
+                            Icons.add,
+                            color: Colors.black,
+                          ),
+                          color: const Color.fromARGB(100, 0, 0, 0),
+                          onPressed: () async {
+                            pets.name = nameController.text;
+                            pets.kind = kindController.text;
+                            pets.gender = genderController.text;
+                            pets.age = ageController.text;
+                            pets.description = descriptionController.text;
+                            pets.image = imageController.text;
+                            pets.sterilization = sterilizationController.text;
+                            pets.treatment = treatmentController.text;
+                            pets.vaccination = vaccinationController.text;
+                            pets.chipping = chippingController.text;
+                            pets.passport = passportController.text;
+                            CollectionReference petsRef =
+                                FirebaseFirestore.instance.collection('pets');
+                            await petsRef.add(
+                              {
+                                'name': pets.name,
+                                'kind': pets.kind,
+                                'gender': pets.gender,
+                                'age': pets.age,
+                                'description': pets.description,
+                                'image': pets.image,
+                                'sterilization': pets.sterilization,
+                                'treatment': pets.treatment,
+                                'vaccination': pets.vaccination,
+                                'chipping': pets.chipping,
+                                'passport': pets.passport
+                              },
+                            );
+                            nameController.clear();
+                            kindController.clear();
+                            genderController.clear();
+                            ageController.clear();
+                            descriptionController.clear();
+                            imageController.clear();
+                            sterilizationController.clear();
+                            treatmentController.clear();
+                            vaccinationController.clear();
+                            chippingController.clear();
+                            passportController.clear();
+                            Navigator.pop(context);
+                          },
+                        ),
+                      ),
                 // TextField(
                 //   decoration: InputDecoration(
                 //     label: const Text(
