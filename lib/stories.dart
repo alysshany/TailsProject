@@ -24,6 +24,9 @@ class _StoriesPageState extends State<StoriesPage> {
                 width: MediaQuery.of(context).size.width * 0.75,
                 height: MediaQuery.of(context).size.height * 0.23,
                 child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   elevation: 0,
                   child: FlipCard(
                     fill: Fill.fillBack,
@@ -104,6 +107,9 @@ class _StoriesPageState extends State<StoriesPage> {
                 width: MediaQuery.of(context).size.width * 0.75,
                 height: MediaQuery.of(context).size.height * 0.23,
                 child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   elevation: 0,
                   child: FlipCard(
                     fill: Fill.fillBack,
@@ -184,6 +190,9 @@ class _StoriesPageState extends State<StoriesPage> {
                 width: MediaQuery.of(context).size.width * 0.75,
                 height: MediaQuery.of(context).size.height * 0.23,
                 child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   elevation: 0,
                   child: FlipCard(
                     fill: Fill.fillBack,

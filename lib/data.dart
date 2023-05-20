@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:file_picker/file_picker.dart';
 // import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
-//import 'package:image_picker/image_picker.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:tails_app/pets_data.dart';
 
 class DataPage extends StatefulWidget {
@@ -45,6 +48,7 @@ class DataPage extends StatefulWidget {
 }
 
 class _DataPageState extends State<DataPage> {
+  final storage = FirebaseStorage.instance;
   TextEditingController nameController = TextEditingController();
   TextEditingController kindController = TextEditingController();
   TextEditingController genderController = TextEditingController();
@@ -72,13 +76,26 @@ class _DataPageState extends State<DataPage> {
   //   final urlDownload = await snapshot.ref.getDownloadURL();
   // }
 
-  // Future<void> _pickImage(ImageSource source) async {
-  //   final pickedFile = await ImagePicker().pickImage(source: source);
+  PlatformFile? result;
 
-  //   if (pickedFile != null) {
-  //     // Do something with the image file.
-  //   }
-  // }
+  Future<void> _pickImage(ImageSource source) async {
+    final pickedFile = await FilePicker.platform.pickFiles();
+
+    if (pickedFile == null) {
+      return;
+    }
+
+    setState(() {
+      result = pickedFile.files.first;
+    });
+
+    final path = 'images/${result!.name}';
+    final file = File(result!.path!);
+
+    final ref = FirebaseStorage.instance.ref().child(path);
+    ref.putFile(file);
+    imageController.text = await ref.getDownloadURL();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -668,7 +685,7 @@ class _DataPageState extends State<DataPage> {
                     child: ElevatedButton(
                       onPressed: () {
                         //selectFile;
-                        //_pickImage(ImageSource.gallery);
+                        _pickImage(ImageSource.gallery);
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,

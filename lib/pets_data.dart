@@ -204,8 +204,8 @@ class _PetsDataPageState extends State<PetsDataPage> {
                                   BorderRadius.circular(20), // Image border
                               child: SizedBox.fromSize(
                                 size: const Size.fromRadius(20), // Image radius
-                                child: Image.asset(
-                                  "images/imgForStoriesOne.jpg",
+                                child: Image.network(
+                                  docs['image'],
                                   fit: BoxFit.cover,
                                   alignment: Alignment.topCenter,
                                 ),
