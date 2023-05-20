@@ -227,7 +227,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  docs.data()['name'],
+                                  docs.data()['name'] ?? "",
                                   style: const TextStyle(
                                       fontFamily: 'PlayfairDisplay',
                                       fontSize: 20),
@@ -239,10 +239,10 @@ class _PetsDataPageState extends State<PetsDataPage> {
                             height: MediaQuery.of(context).size.height * 0.20,
                             width: MediaQuery.of(context).size.width * 0.48,
                             child: Text(
-                              docs.data()['description'],
+                              docs.data()['description'] ?? "",
                               style: const TextStyle(
                                   fontFamily: 'PlayfairDisplay', fontSize: 12),
-                              textAlign: TextAlign.center,
+                              textAlign: TextAlign.start,
                             ),
                           ),
                           SizedBox(

@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -141,17 +139,17 @@ class _DataPageState extends State<DataPage> {
                         FirebaseFirestore.instance.collection('pets');
                     await petsRef.doc(widget.docFireBase.id).update(
                       {
-                        'name': pets.name,
-                        'kind': pets.kind,
-                        'gender': pets.gender,
-                        'age': pets.age,
-                        'description': pets.description,
-                        'image': pets.image,
-                        'sterilization': pets.sterilization,
-                        'treatment': pets.treatment,
-                        'vaccination': pets.vaccination,
-                        'chipping': pets.chipping,
-                        'passport': pets.passport
+                        'name': nameController.text,
+                        'kind': kindController.text,
+                        'gender': genderController.text,
+                        'age': ageController.text,
+                        'description': descriptionController.text,
+                        'image': imageController.text,
+                        'sterilization': sterilizationController.text,
+                        'treatment': treatmentController.text,
+                        'vaccination': vaccinationController.text,
+                        'chipping': chippingController.text,
+                        'passport': passportController.text
                       },
                     );
                     nameController.clear();
@@ -189,17 +187,17 @@ class _DataPageState extends State<DataPage> {
                               FirebaseFirestore.instance.collection('pets');
                           await petsRef.doc(widget.docFireBase.id).update(
                             {
-                              'name': pets.name,
-                              'kind': pets.kind,
-                              'gender': pets.gender,
-                              'age': pets.age,
-                              'description': pets.description,
-                              'image': pets.image,
-                              'sterilization': pets.sterilization,
-                              'treatment': pets.treatment,
-                              'vaccination': pets.vaccination,
-                              'chipping': pets.chipping,
-                              'passport': pets.passport
+                              'name': nameController.text,
+                              'kind': kindController.text,
+                              'gender': genderController.text,
+                              'age': ageController.text,
+                              'description': descriptionController.text,
+                              'image': imageController.text,
+                              'sterilization': sterilizationController.text,
+                              'treatment': treatmentController.text,
+                              'vaccination': vaccinationController.text,
+                              'chipping': chippingController.text,
+                              'passport': passportController.text
                             },
                           );
                           nameController.clear();

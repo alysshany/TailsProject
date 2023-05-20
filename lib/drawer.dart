@@ -91,20 +91,6 @@ class _MenuDrawerState extends State<MenuDrawer> {
               Navigator.pushNamed(context, '/projectInfo');
             },
           ),
-          ListTile(
-            leading: const Icon(
-              Icons.pets,
-            ),
-            title: const Text(
-              "Добавить питомца",
-              style: TextStyle(
-                fontFamily: 'PlayfairDisplay',
-              ),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, '/data');
-            },
-          ),
           FutureBuilder(
             future: getUser(),
             builder: (context, snapshot) {

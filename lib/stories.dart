@@ -117,7 +117,7 @@ class _StoriesPageState extends State<StoriesPage> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Image.asset(
-                          "images/imgForStoriesOne.jpg",
+                          "images/kotik.jpg",
                           fit: BoxFit.cover,
                           alignment: Alignment.topCenter,
                         ),
@@ -138,7 +138,7 @@ class _StoriesPageState extends State<StoriesPage> {
                                 height:
                                     MediaQuery.of(context).size.height * 0.05,
                                 child: const Text(
-                                  "Рыжик",
+                                  "Лея",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontFamily: 'PlayfairDisplay',
@@ -156,7 +156,7 @@ class _StoriesPageState extends State<StoriesPage> {
                                 height:
                                     MediaQuery.of(context).size.height * 0.15,
                                 child: const Text(
-                                  "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
+                                  "Посмотрите, какой счастливой выглядит Лея! Теперь благодаря проекту «Хвостики» у неё есть дом и любящая семья. Мы верим, что это только начало удивительной и доброй истории.",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontFamily: 'PlayfairDisplay',
@@ -197,7 +197,7 @@ class _StoriesPageState extends State<StoriesPage> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Image.asset(
-                          "images/imgForStoriesOne.jpg",
+                          "images/sobaka.jpg",
                           fit: BoxFit.cover,
                           alignment: Alignment.topCenter,
                         ),
@@ -218,7 +218,7 @@ class _StoriesPageState extends State<StoriesPage> {
                                 height:
                                     MediaQuery.of(context).size.height * 0.05,
                                 child: const Text(
-                                  "Рыжик",
+                                  "Соня",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontFamily: 'PlayfairDisplay',
@@ -236,7 +236,7 @@ class _StoriesPageState extends State<StoriesPage> {
                                 height:
                                     MediaQuery.of(context).size.height * 0.15,
                                 child: const Text(
-                                  "Посмотрите, как преобразился Рыжик! Теперь этот красавец живет дома благодаря проекту «Хвостики». Мы уверены, что это только начало счастливой, теплой, уютной, а главное —домашней жизни!",
+                                  "Сонечку нашли в Волгограде, в крайне истощенном состоянии она скиталась по улицам. Рентген показал пули во всём теле, кто-то видимо так жестоко развлекался... Но ее удалось спасти и вскоре найти для нее дом.",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontFamily: 'PlayfairDisplay',
