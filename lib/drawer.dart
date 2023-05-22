@@ -93,6 +93,22 @@ class _MenuDrawerState extends State<MenuDrawer> {
               Navigator.pushNamed(context, '/projectInfo');
             },
           ),
+          ListTile(
+            leading: const Icon(
+              Icons.home,
+              color: Color.fromARGB(159, 52, 72, 102),
+            ),
+            title: const Text(
+              'Полезные статьи',
+              style: TextStyle(
+                color: Color.fromARGB(159, 52, 72, 102),
+                fontFamily: 'PlayfairDisplay',
+              ),
+            ),
+            onTap: () {
+              Navigator.pushNamed(context, '/articles');
+            },
+          ),
           FutureBuilder(
             future: getUser(),
             builder: (context, snapshot) {

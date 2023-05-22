@@ -8,7 +8,8 @@ import 'package:tails_app/data.dart';
 class PetsDataPage extends StatefulWidget {
   //final String searchText;
   bool? active;
-  PetsDataPage({super.key, this.active});
+  List<String> filter;
+  PetsDataPage(this.filter, {super.key, this.active});
   @override
   State<PetsDataPage> createState() => _PetsDataPageState();
 }
@@ -155,11 +156,23 @@ class _PetsDataPageState extends State<PetsDataPage> {
             ),
           );
         } else {
+          var list = snapshot.data.docs;
+          if (widget.filter.isEmpty) {
+            list = snapshot.data.docs;
+          } else if (widget.filter.first == "Все") {
+            list = snapshot.data.docs;
+          } else if (widget.filter != []) {
+            list = snapshot.data.docs
+                .where((x) =>
+                    widget.filter.contains(x['kind']) ||
+                    widget.filter.contains(x['gender']))
+                .toList();
+          }
+
           return ListView.builder(
             physics: const BouncingScrollPhysics(),
-            itemCount: snapshot.data.docs.length,
-            itemBuilder: (context, index) =>
-                buildList(context, snapshot.data.docs[index]),
+            itemCount: list.length,
+            itemBuilder: (context, index) => buildList(context, list[index]),
           );
         }
       },

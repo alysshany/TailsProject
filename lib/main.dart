@@ -3,6 +3,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
+import 'package:tails_app/articleInfo.dart';
+import 'package:tails_app/articles.dart';
 import 'package:tails_app/auth/service.dart';
 import 'package:tails_app/contacts.dart';
 import 'package:tails_app/data.dart';
@@ -40,7 +42,9 @@ class MyApp extends StatelessWidget {
           '/projectInfo': (context) => const AboutProjectPage(),
           '/firstView': (context) => const FirstViewPage(),
           '/personal': (context) => const PersonalPage(),
-          '/contacts': (context) => const ContactsPage()
+          '/contacts': (context) => const ContactsPage(),
+          '/articles': (context) => const ArticlesPage(),
+          '/articleInfo': (context) => const ArticleInfoPage()
         },
         home: AnimatedSplashScreen(
           duration: 3000,
