@@ -49,19 +49,19 @@ class _FirstViewPageState extends State<FirstViewPage> {
           /// Home
           DotNavigationBarItem(
             icon: const Icon(Icons.home),
-            selectedColor: const Color.fromARGB(101, 133, 166, 255),
+            selectedColor: const Color.fromARGB(159, 113, 142, 185),
           ),
 
           /// Likes
           DotNavigationBarItem(
             icon: const Icon(Icons.favorite_border),
-            selectedColor: const Color.fromARGB(101, 133, 166, 255),
+            selectedColor: const Color.fromARGB(159, 113, 142, 185),
           ),
 
           /// Profile
           DotNavigationBarItem(
             icon: const Icon(Icons.person),
-            selectedColor: const Color.fromARGB(101, 133, 166, 255),
+            selectedColor: const Color.fromARGB(159, 113, 142, 185),
           ),
         ],
       ),

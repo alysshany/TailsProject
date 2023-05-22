@@ -63,7 +63,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
                 accountName: Text(email),
                 accountEmail: const Text("Tails"),
                 decoration: BoxDecoration(
-                    color: const Color.fromARGB(101, 133, 166, 255),
+                    color: Color.fromARGB(159, 113, 142, 185),
                     borderRadius: BorderRadius.circular(15)),
                 otherAccountsPictures: [
                   IconButton(
@@ -80,10 +80,12 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ListTile(
             leading: const Icon(
               Icons.home,
+              color: Color.fromARGB(159, 52, 72, 102),
             ),
             title: const Text(
               'О проекте',
               style: TextStyle(
+                color: Color.fromARGB(159, 52, 72, 102),
                 fontFamily: 'PlayfairDisplay',
               ),
             ),
@@ -98,10 +100,12 @@ class _MenuDrawerState extends State<MenuDrawer> {
                   ? ListTile(
                       leading: const Icon(
                         Icons.pets,
+                        color: Color.fromARGB(159, 52, 72, 102),
                       ),
                       title: const Text(
                         "Добавить питомца",
                         style: TextStyle(
+                          color: Color.fromARGB(159, 52, 72, 102),
                           fontFamily: 'PlayfairDisplay',
                         ),
                       ),
@@ -112,10 +116,12 @@ class _MenuDrawerState extends State<MenuDrawer> {
                   : ListTile(
                       leading: const Icon(
                         Icons.pets,
+                        color: Color.fromARGB(159, 52, 72, 102),
                       ),
                       title: const Text(
                         'Как забрать питомца',
                         style: TextStyle(
+                          color: Color.fromARGB(159, 52, 72, 102),
                           fontFamily: 'PlayfairDisplay',
                         ),
                       ),

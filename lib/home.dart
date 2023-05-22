@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           Navigator.pushNamed(context, '/auth');
         },
-        backgroundColor: const Color.fromARGB(199, 123, 189, 255),
+        backgroundColor: const Color.fromARGB(159, 113, 142, 185),
         child: const Icon(Icons.navigate_next),
       ),
     );

@@ -17,7 +17,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
   getUser() {
     var user = FirebaseFirestore.instance
         .collection("admins")
-        .doc(FirebaseAuth.instance.currentUser!.email.toString())
+        .doc(FirebaseAuth.instance.currentUser?.email.toString())
         .snapshots()
         .listen(
       (datasnapshot) {
@@ -54,7 +54,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
                       height: MediaQuery.of(context).size.height * 0.05,
                       child: IconButton(
                         icon: const Icon(Icons.replay),
-                        color: const Color.fromARGB(101, 133, 166, 255),
+                        color: const Color.fromARGB(159, 113, 142, 185),
                         onPressed: () {
                           Navigator.push(
                             context,
@@ -84,7 +84,7 @@ class _PetsDataPageState extends State<PetsDataPage> {
                       height: MediaQuery.of(context).size.height * 0.05,
                       child: IconButton(
                         icon: const Icon(Icons.delete),
-                        color: const Color.fromARGB(101, 133, 166, 255),
+                        color: const Color.fromARGB(159, 113, 142, 185),
                         onPressed: () {
                           CollectionReference petsRef =
                               FirebaseFirestore.instance.collection('pets');

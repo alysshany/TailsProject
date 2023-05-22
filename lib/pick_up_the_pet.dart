@@ -30,6 +30,7 @@ class _PickUpPageState extends State<PickUpPage> {
               "Как забрать питомца домой?",
               textAlign: TextAlign.center,
               style: TextStyle(
+                color: Color.fromARGB(159, 52, 72, 102),
                 fontFamily: 'PlayfairDisplay',
                 fontSize: 24,
               ),
@@ -57,6 +58,7 @@ class _PickUpPageState extends State<PickUpPage> {
                         "1.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
+                          color: Color.fromARGB(159, 52, 72, 102),
                           fontFamily: 'PlayfairDisplay',
                           fontSize: 14,
                         ),
@@ -89,6 +91,7 @@ class _PickUpPageState extends State<PickUpPage> {
                         "2.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
+                          color: Color.fromARGB(159, 52, 72, 102),
                           fontFamily: 'PlayfairDisplay',
                           fontSize: 14,
                         ),
@@ -121,6 +124,7 @@ class _PickUpPageState extends State<PickUpPage> {
                         "3.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
+                          color: Color.fromARGB(159, 52, 72, 102),
                           fontFamily: 'PlayfairDisplay',
                           fontSize: 14,
                         ),
@@ -161,6 +165,7 @@ class _PickUpPageState extends State<PickUpPage> {
                         "4.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
+                          color: Color.fromARGB(159, 52, 72, 102),
                           fontFamily: 'PlayfairDisplay',
                           fontSize: 14,
                         ),
@@ -193,6 +198,7 @@ class _PickUpPageState extends State<PickUpPage> {
                         "5.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
+                          color: Color.fromARGB(159, 52, 72, 102),
                           fontFamily: 'PlayfairDisplay',
                           fontSize: 14,
                         ),

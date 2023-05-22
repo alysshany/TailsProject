@@ -64,6 +64,7 @@ class _StoriesPageState extends State<StoriesPage> {
                                   "Рыжик",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
+                                    color: Color.fromARGB(159, 52, 72, 102),
                                     fontFamily: 'PlayfairDisplay',
                                     fontSize: 22,
                                   ),
@@ -147,6 +148,7 @@ class _StoriesPageState extends State<StoriesPage> {
                                   "Лея",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
+                                    color: Color.fromARGB(159, 52, 72, 102),
                                     fontFamily: 'PlayfairDisplay',
                                     fontSize: 22,
                                   ),
@@ -230,6 +232,7 @@ class _StoriesPageState extends State<StoriesPage> {
                                   "Соня",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
+                                    color: Color.fromARGB(159, 52, 72, 102),
                                     fontFamily: 'PlayfairDisplay',
                                     fontSize: 22,
                                   ),

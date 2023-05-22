@@ -93,8 +93,8 @@ class _DataPageState extends State<DataPage> {
     final file = File(result!.path!);
 
     final ref = FirebaseStorage.instance.ref().child(path);
-    ref.putFile(file);
-    imageController.text = await ref.getDownloadURL();
+    final TaskSnapshot snapshot = await ref.putFile(file);
+    imageController.text = await snapshot.ref.getDownloadURL();
   }
 
   @override
@@ -397,15 +397,19 @@ class _DataPageState extends State<DataPage> {
                   ),
                   elevation: 10,
                   child: TextField(
+                    style: const TextStyle(
+                      color: Color.fromARGB(159, 52, 72, 102),
+                    ),
                     decoration: InputDecoration(
                       label: const Text(
                         "Имя",
                         style: TextStyle(
+                          color: Color.fromARGB(159, 52, 72, 102),
                           fontFamily: 'PlayfairDisplay',
                         ),
                       ),
                       labelStyle: const TextStyle(
-                        color: Color.fromARGB(100, 0, 0, 0),
+                        color: Color.fromARGB(159, 52, 72, 102),
                         fontFamily: 'PlayfairDisplay',
                       ),
                       focusedBorder: OutlineInputBorder(
@@ -422,7 +426,7 @@ class _DataPageState extends State<DataPage> {
                       ),
                     ),
                     controller: nameController,
-                    cursorColor: const Color.fromARGB(101, 133, 166, 255),
+                    cursorColor: const Color.fromARGB(159, 52, 72, 102),
                   ),
                 ),
                 Card(
@@ -432,13 +436,17 @@ class _DataPageState extends State<DataPage> {
                   ),
                   elevation: 10,
                   child: TextField(
+                    style: const TextStyle(
+                      color: Color.fromARGB(159, 52, 72, 102),
+                    ),
                     decoration: InputDecoration(
                       label: const Text("Вид",
                           style: TextStyle(
+                            color: Color.fromARGB(159, 52, 72, 102),
                             fontFamily: 'PlayfairDisplay',
                           )),
                       labelStyle: const TextStyle(
-                        color: Color.fromARGB(100, 0, 0, 0),
+                        color: Color.fromARGB(159, 52, 72, 102),
                         fontFamily: 'PlayfairDisplay',
                       ),
                       focusedBorder: OutlineInputBorder(
@@ -455,7 +463,7 @@ class _DataPageState extends State<DataPage> {
                       ),
                     ),
                     controller: kindController,
-                    cursorColor: const Color.fromARGB(101, 133, 166, 255),
+                    cursorColor: const Color.fromARGB(159, 52, 72, 102),
                   ),
                 ),
                 Card(
@@ -465,15 +473,19 @@ class _DataPageState extends State<DataPage> {
                   ),
                   elevation: 10,
                   child: TextField(
+                    style: const TextStyle(
+                      color: Color.fromARGB(159, 52, 72, 102),
+                    ),
                     decoration: InputDecoration(
                       label: const Text(
                         "Пол",
                         style: TextStyle(
+                          color: Color.fromARGB(159, 52, 72, 102),
                           fontFamily: 'PlayfairDisplay',
                         ),
                       ),
                       labelStyle: const TextStyle(
-                        color: Color.fromARGB(100, 0, 0, 0),
+                        color: Color.fromARGB(159, 52, 72, 102),
                         fontFamily: 'PlayfairDisplay',
                       ),
                       focusedBorder: OutlineInputBorder(
@@ -490,7 +502,7 @@ class _DataPageState extends State<DataPage> {
                       ),
                     ),
                     controller: genderController,
-                    cursorColor: const Color.fromARGB(101, 133, 166, 255),
+                    cursorColor: const Color.fromARGB(159, 52, 72, 102),
                   ),
                 ),
                 Card(
@@ -500,15 +512,19 @@ class _DataPageState extends State<DataPage> {
                   ),
                   elevation: 10,
                   child: TextField(
+                    style: const TextStyle(
+                      color: Color.fromARGB(159, 52, 72, 102),
+                    ),
                     decoration: InputDecoration(
                       label: const Text(
                         "Возраст",
                         style: TextStyle(
+                          color: Color.fromARGB(159, 52, 72, 102),
                           fontFamily: 'PlayfairDisplay',
                         ),
                       ),
                       labelStyle: const TextStyle(
-                        color: Color.fromARGB(100, 0, 0, 0),
+                        color: Color.fromARGB(159, 52, 72, 102),
                         fontFamily: 'PlayfairDisplay',
                       ),
                       focusedBorder: OutlineInputBorder(
@@ -525,7 +541,7 @@ class _DataPageState extends State<DataPage> {
                       ),
                     ),
                     controller: ageController,
-                    cursorColor: const Color.fromARGB(101, 133, 166, 255),
+                    cursorColor: const Color.fromARGB(159, 52, 72, 102),
                   ),
                 ),
                 Card(
@@ -535,15 +551,19 @@ class _DataPageState extends State<DataPage> {
                   ),
                   elevation: 10,
                   child: TextField(
+                    style: const TextStyle(
+                      color: Color.fromARGB(159, 52, 72, 102),
+                    ),
                     decoration: InputDecoration(
                       label: const Text(
                         "Описание",
                         style: TextStyle(
+                          color: Color.fromARGB(159, 52, 72, 102),
                           fontFamily: 'PlayfairDisplay',
                         ),
                       ),
                       labelStyle: const TextStyle(
-                        color: Color.fromARGB(100, 0, 0, 0),
+                        color: Color.fromARGB(159, 52, 72, 102),
                         fontFamily: 'PlayfairDisplay',
                       ),
                       focusedBorder: OutlineInputBorder(
@@ -560,7 +580,7 @@ class _DataPageState extends State<DataPage> {
                       ),
                     ),
                     controller: descriptionController,
-                    cursorColor: const Color.fromARGB(101, 133, 166, 255),
+                    cursorColor: const Color.fromARGB(159, 52, 72, 102),
                   ),
                 ),
                 Card(
@@ -570,13 +590,17 @@ class _DataPageState extends State<DataPage> {
                   ),
                   elevation: 10,
                   child: TextField(
+                    style: const TextStyle(
+                      color: Color.fromARGB(159, 52, 72, 102),
+                    ),
                     decoration: InputDecoration(
                       label: const Text("Стерилизация/кастрация (Да/Нет)",
                           style: TextStyle(
+                            color: Color.fromARGB(159, 52, 72, 102),
                             fontFamily: 'PlayfairDisplay',
                           )),
                       labelStyle: const TextStyle(
-                        color: Color.fromARGB(100, 0, 0, 0),
+                        color: Color.fromARGB(159, 52, 72, 102),
                         fontFamily: 'PlayfairDisplay',
                       ),
                       focusedBorder: OutlineInputBorder(
@@ -593,7 +617,7 @@ class _DataPageState extends State<DataPage> {
                       ),
                     ),
                     controller: sterilizationController,
-                    cursorColor: const Color.fromARGB(101, 133, 166, 255),
+                    cursorColor: const Color.fromARGB(159, 52, 72, 102),
                   ),
                 ),
                 Card(
@@ -603,13 +627,17 @@ class _DataPageState extends State<DataPage> {
                   ),
                   elevation: 10,
                   child: TextField(
+                    style: const TextStyle(
+                      color: Color.fromARGB(159, 52, 72, 102),
+                    ),
                     decoration: InputDecoration(
                       label: const Text("Обработка от паразитов (Да/Нет)",
                           style: TextStyle(
+                            color: Color.fromARGB(159, 52, 72, 102),
                             fontFamily: 'PlayfairDisplay',
                           )),
                       labelStyle: const TextStyle(
-                        color: Color.fromARGB(100, 0, 0, 0),
+                        color: Color.fromARGB(159, 52, 72, 102),
                         fontFamily: 'PlayfairDisplay',
                       ),
                       focusedBorder: OutlineInputBorder(
@@ -626,7 +654,7 @@ class _DataPageState extends State<DataPage> {
                       ),
                     ),
                     controller: treatmentController,
-                    cursorColor: const Color.fromARGB(101, 133, 166, 255),
+                    cursorColor: const Color.fromARGB(159, 52, 72, 102),
                   ),
                 ),
                 Card(
@@ -636,13 +664,17 @@ class _DataPageState extends State<DataPage> {
                   ),
                   elevation: 10,
                   child: TextField(
+                    style: const TextStyle(
+                      color: Color.fromARGB(159, 52, 72, 102),
+                    ),
                     decoration: InputDecoration(
                       label: const Text("Вакцинация (Да/Нет)",
                           style: TextStyle(
+                            color: Color.fromARGB(159, 52, 72, 102),
                             fontFamily: 'PlayfairDisplay',
                           )),
                       labelStyle: const TextStyle(
-                        color: Color.fromARGB(100, 0, 0, 0),
+                        color: Color.fromARGB(159, 52, 72, 102),
                         fontFamily: 'PlayfairDisplay',
                       ),
                       focusedBorder: OutlineInputBorder(
@@ -659,7 +691,7 @@ class _DataPageState extends State<DataPage> {
                       ),
                     ),
                     controller: vaccinationController,
-                    cursorColor: const Color.fromARGB(101, 133, 166, 255),
+                    cursorColor: const Color.fromARGB(159, 52, 72, 102),
                   ),
                 ),
                 Card(
@@ -669,13 +701,17 @@ class _DataPageState extends State<DataPage> {
                   ),
                   elevation: 10,
                   child: TextField(
+                    style: const TextStyle(
+                      color: Color.fromARGB(159, 52, 72, 102),
+                    ),
                     decoration: InputDecoration(
                       label: const Text("Чипирование (Да/Нет)",
                           style: TextStyle(
+                            color: Color.fromARGB(159, 52, 72, 102),
                             fontFamily: 'PlayfairDisplay',
                           )),
                       labelStyle: const TextStyle(
-                        color: Color.fromARGB(100, 0, 0, 0),
+                        color: Color.fromARGB(159, 52, 72, 102),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -691,7 +727,7 @@ class _DataPageState extends State<DataPage> {
                       ),
                     ),
                     controller: chippingController,
-                    cursorColor: const Color.fromARGB(101, 133, 166, 255),
+                    cursorColor: const Color.fromARGB(159, 52, 72, 102),
                   ),
                 ),
                 Card(
@@ -701,13 +737,17 @@ class _DataPageState extends State<DataPage> {
                   ),
                   elevation: 10,
                   child: TextField(
+                    style: const TextStyle(
+                      color: Color.fromARGB(159, 52, 72, 102),
+                    ),
                     decoration: InputDecoration(
                       label: const Text("Ветеринарный паспорт (Да/Нет)",
                           style: TextStyle(
+                            color: Color.fromARGB(159, 52, 72, 102),
                             fontFamily: 'PlayfairDisplay',
                           )),
                       labelStyle: const TextStyle(
-                        color: Color.fromARGB(100, 0, 0, 0),
+                        color: Color.fromARGB(159, 52, 72, 102),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -723,7 +763,7 @@ class _DataPageState extends State<DataPage> {
                       ),
                     ),
                     controller: passportController,
-                    cursorColor: const Color.fromARGB(101, 133, 166, 255),
+                    cursorColor: const Color.fromARGB(159, 52, 72, 102),
                   ),
                 ),
                 Card(
@@ -735,7 +775,7 @@ class _DataPageState extends State<DataPage> {
                     child: ElevatedButton(
                       style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll<Color>(
-                            Color.fromARGB(255, 231, 243, 255)),
+                            Color.fromARGB(159, 113, 142, 185)),
                       ),
                       onPressed: () {
                         //selectFile;
@@ -746,11 +786,11 @@ class _DataPageState extends State<DataPage> {
                         children: const [
                           Text("Добавить картинку",
                               style: TextStyle(
-                                  color: Color.fromARGB(100, 0, 0, 0),
+                                  color: Color.fromARGB(255, 231, 243, 255),
                                   fontFamily: 'PlayfairDisplay')),
                           Icon(
                             Icons.add,
-                            color: Color.fromARGB(100, 0, 0, 0),
+                            color: Color.fromARGB(255, 231, 243, 255),
                           ),
                         ],
                       ),
@@ -764,9 +804,7 @@ class _DataPageState extends State<DataPage> {
                         child: IconButton(
                           icon: const Icon(
                             Icons.update,
-                            color: Colors.black,
                           ),
-                          color: const Color.fromARGB(100, 0, 0, 0),
                           onPressed: () async {
                             CollectionReference petsRef =
                                 FirebaseFirestore.instance.collection('pets');
@@ -808,9 +846,7 @@ class _DataPageState extends State<DataPage> {
                         child: IconButton(
                           icon: const Icon(
                             Icons.add,
-                            color: Colors.black,
                           ),
-                          color: const Color.fromARGB(100, 0, 0, 0),
                           onPressed: () async {
                             pets.name = nameController.text;
                             pets.kind = kindController.text;

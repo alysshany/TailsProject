@@ -37,6 +37,7 @@ class _ContactsPageState extends State<ContactsPage> {
                           "Выбрали себе нового друга? Скорее свяжитесь с нами!",
                           textAlign: TextAlign.center,
                           style: TextStyle(
+                            color: Color.fromARGB(159, 52, 72, 102),
                             fontFamily: 'PlayfairDisplay',
                             fontSize: 20,
                           ),
@@ -49,6 +50,7 @@ class _ContactsPageState extends State<ContactsPage> {
                           "+7‒987‒273‒00‒37",
                           textAlign: TextAlign.center,
                           style: TextStyle(
+                            color: Color.fromARGB(159, 52, 72, 102),
                             fontWeight: FontWeight.bold,
                             fontFamily: 'PlayfairDisplay',
                             fontSize: 20,
@@ -62,6 +64,7 @@ class _ContactsPageState extends State<ContactsPage> {
                           "Приходите к нам за новым другом по адресу: ​с. Столбище​",
                           textAlign: TextAlign.center,
                           style: TextStyle(
+                            color: Color.fromARGB(159, 52, 72, 102),
                             fontStyle: FontStyle.italic,
                             fontFamily: 'PlayfairDisplay',
                             fontSize: 10,

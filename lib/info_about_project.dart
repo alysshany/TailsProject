@@ -46,7 +46,7 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
                 "О проекте",
                 style: TextStyle(
                     fontFamily: 'PlayfairDisplay',
-                    color: Colors.black,
+                    color: Color.fromARGB(159, 52, 72, 102),
                     fontSize: 22),
               ),
             ),
@@ -103,7 +103,7 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
               "Расскажи о нас друзьям!",
               style: TextStyle(
                   fontFamily: 'PlayfairDisplay',
-                  color: Colors.black,
+                  color: Color.fromARGB(159, 52, 72, 102),
                   fontSize: 22),
             )),
             SizedBox(
@@ -159,7 +159,7 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
                 "Приезжай в гости!",
                 style: TextStyle(
                     fontFamily: 'PlayfairDisplay',
-                    color: Colors.black,
+                    color: Color.fromARGB(159, 52, 72, 102),
                     fontSize: 22),
               ),
             ),
@@ -212,7 +212,7 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
                 "Будь другом, подари!",
                 style: TextStyle(
                     fontFamily: 'PlayfairDisplay',
-                    color: Colors.black,
+                    color: Color.fromARGB(159, 52, 72, 102),
                     fontSize: 22),
               ),
             ),
@@ -270,7 +270,7 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
                 spacing: 10,
                 dotHeight: 12,
                 dotWidth: 12,
-                activeDotColor: Color.fromARGB(255, 168, 212, 255),
+                activeDotColor: Color.fromARGB(159, 113, 142, 185),
                 dotColor: Color.fromARGB(255, 230, 243, 255),
               ),
             ),
